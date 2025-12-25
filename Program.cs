@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace US_Bangla_Airline_Management_App
@@ -17,7 +17,8 @@ namespace US_Bangla_Airline_Management_App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LogInForm());
-           Application.Run(new regis());
+         // Application.Run(new regis());
+           Application.Run(new SearchFlight());
         }
     }
 }

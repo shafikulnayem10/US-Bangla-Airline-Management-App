@@ -60,6 +60,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regis.Designer.cs">
+      <DependentUpon>regis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchFlight.Designer.cs">
+      <DependentUpon>SearchFlight.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,6 +85,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="regis.resx">
+      <DependentUpon>regis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchFlight.resx">
+      <DependentUpon>SearchFlight.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

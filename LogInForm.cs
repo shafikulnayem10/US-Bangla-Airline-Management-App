@@ -16,5 +16,18 @@ namespace US_Bangla_Airline_Management_App
         {
             InitializeComponent();
         }
+
+        private void LogInButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            LogInForm If = new LogInForm();
+            If.Show();
+            this.Hide();
+        }
     }
 }

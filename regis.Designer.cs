@@ -153,6 +153,7 @@ namespace US_Bangla_Airline_Management_App
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 18;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -192,6 +193,7 @@ namespace US_Bangla_Airline_Management_App
             this.LogInFormCmb.Size = new System.Drawing.Size(133, 21);
             this.LogInFormCmb.TabIndex = 22;
             this.LogInFormCmb.Text = "Select";
+            this.LogInFormCmb.SelectedIndexChanged += new System.EventHandler(this.LogInFormCmb_SelectedIndexChanged);
             // 
             // signup
             // 
@@ -202,6 +204,7 @@ namespace US_Bangla_Airline_Management_App
             this.signup.TabIndex = 23;
             this.signup.Text = "Sign Up";
             this.signup.UseVisualStyleBackColor = false;
+            this.signup.Click += new System.EventHandler(this.signup_Click);
             this.signup.MouseClick += new System.Windows.Forms.MouseEventHandler(this.signup_MouseClick);
             // 
             // Cancel

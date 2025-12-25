@@ -20,3 +20,5 @@ D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\obj\Debug\US-Bangla Ai
 D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\obj\Debug\US-Bangla Airline Management App.exe
 D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\obj\Debug\US-Bangla Airline Management App.pdb
 D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\obj\Debug\US_Bangla_Airline_Management_App.SearchFlight.resources
+D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\bin\Debug\FlightSearches_log.ldf
+D:\AIUB\Fall 25-26\OOP 2\US-Bangla-Airline-Management-App\obj\Debug\FlightBooking.SearchFlight.resources

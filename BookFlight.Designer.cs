@@ -1,4 +1,4 @@
-﻿
+﻿/*
 namespace US_Bangla_Airline_Management_App
 {
     partial class BookFlight
@@ -286,4 +286,5 @@ namespace US_Bangla_Airline_Management_App
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.ComboBox comboBox2;
     }
-}
+} 
+*/

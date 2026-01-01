@@ -29,6 +29,7 @@ namespace US_Bangla_Airline_Management_App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(regis));
             this.AppliCATIONfORM = new System.Windows.Forms.Label();
             this.PERSONALiNFO = new System.Windows.Forms.Label();
             this.FullName = new System.Windows.Forms.Label();
@@ -255,6 +256,7 @@ namespace US_Bangla_Airline_Management_App
             this.Controls.Add(this.PERSONALiNFO);
             this.Controls.Add(this.AppliCATIONfORM);
             this.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "regis";
             this.Text = "regis";

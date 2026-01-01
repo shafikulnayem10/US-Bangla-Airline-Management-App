@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # ✈️ US-Bangla Airline Management App
 
@@ -113,3 +114,6 @@ This project is designed for academic purposes and follows core **Object-Oriente
 
 
 
+=======
+# Airlines-Management-System
+>>>>>>> 6e83480261815b91398b5ca651ef403e390c892f

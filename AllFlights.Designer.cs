@@ -41,6 +41,7 @@ namespace US_Bangla_Airline_Management_App
             // 
             this.AllFlightsFormFlightDataTable.AllowUserToAddRows = false;
             this.AllFlightsFormFlightDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AllFlightsFormFlightDataTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.AllFlightsFormFlightDataTable.Location = new System.Drawing.Point(12, 12);
             this.AllFlightsFormFlightDataTable.MultiSelect = false;
             this.AllFlightsFormFlightDataTable.Name = "AllFlightsFormFlightDataTable";

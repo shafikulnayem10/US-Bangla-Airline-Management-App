@@ -38,6 +38,7 @@ namespace US_Bangla_Airline_Management_App
             this.label4 = new System.Windows.Forms.Label();
             this.AdminProfileRoleCmbBox = new System.Windows.Forms.ComboBox();
             this.AdminProfileUpdateBtn = new System.Windows.Forms.Button();
+            this.AdminProfileFormBackBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,19 +112,30 @@ namespace US_Bangla_Airline_Management_App
             // 
             // AdminProfileUpdateBtn
             // 
-            this.AdminProfileUpdateBtn.Location = new System.Drawing.Point(207, 308);
+            this.AdminProfileUpdateBtn.Location = new System.Drawing.Point(160, 308);
             this.AdminProfileUpdateBtn.Name = "AdminProfileUpdateBtn";
-            this.AdminProfileUpdateBtn.Size = new System.Drawing.Size(75, 23);
+            this.AdminProfileUpdateBtn.Size = new System.Drawing.Size(159, 49);
             this.AdminProfileUpdateBtn.TabIndex = 8;
             this.AdminProfileUpdateBtn.Text = "Update Profile";
             this.AdminProfileUpdateBtn.UseVisualStyleBackColor = true;
             this.AdminProfileUpdateBtn.Click += new System.EventHandler(this.AdminProfileUpdateBtn_Click);
+            // 
+            // AdminProfileFormBackBtn
+            // 
+            this.AdminProfileFormBackBtn.Location = new System.Drawing.Point(449, 302);
+            this.AdminProfileFormBackBtn.Name = "AdminProfileFormBackBtn";
+            this.AdminProfileFormBackBtn.Size = new System.Drawing.Size(149, 60);
+            this.AdminProfileFormBackBtn.TabIndex = 9;
+            this.AdminProfileFormBackBtn.Text = "Back ";
+            this.AdminProfileFormBackBtn.UseVisualStyleBackColor = true;
+            this.AdminProfileFormBackBtn.Click += new System.EventHandler(this.AdminProfileFormBackBtn_click);
             // 
             // AdminProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AdminProfileFormBackBtn);
             this.Controls.Add(this.AdminProfileUpdateBtn);
             this.Controls.Add(this.AdminProfileRoleCmbBox);
             this.Controls.Add(this.label4);
@@ -151,5 +163,6 @@ namespace US_Bangla_Airline_Management_App
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox AdminProfileRoleCmbBox;
         private System.Windows.Forms.Button AdminProfileUpdateBtn;
+        private System.Windows.Forms.Button AdminProfileFormBackBtn;
     }
 }

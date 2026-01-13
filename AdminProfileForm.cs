@@ -83,5 +83,12 @@ namespace US_Bangla_Airline_Management_App
             this.Close();
         }
 
+        private void AdminProfileFormBackBtn_click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminDashboard a = new AdminDashboard();
+            a.Show();
+
+        }
     }
 }

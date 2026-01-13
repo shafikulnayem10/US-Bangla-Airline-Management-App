@@ -39,9 +39,11 @@ namespace US_Bangla_Airline_Management_App
             // AllUsersTable
             // 
             this.AllUsersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.AllUsersTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.AllUsersTable.Location = new System.Drawing.Point(3, 6);
             this.AllUsersTable.MultiSelect = false;
             this.AllUsersTable.Name = "AllUsersTable";
+            this.AllUsersTable.ReadOnly = true;
             this.AllUsersTable.RowHeadersWidth = 51;
             this.AllUsersTable.RowTemplate.Height = 24;
             this.AllUsersTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

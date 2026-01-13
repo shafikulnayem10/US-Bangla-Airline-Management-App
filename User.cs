@@ -59,7 +59,49 @@ namespace US_Bangla_Airline_Management_App
 
 
         // 🔹 READ
-        //public void GetById(int id) { }
+        public static DataRow GetUserByUsername(string username)
+        {
+            SqlConnection con = DbConfig.GetConnection();
+            con.Open();
+
+            string query = "SELECT * FROM UserTable WHERE UserName = @UserName";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@UserName", username.Trim());
+
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            con.Close();
+
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0];   // first matching user
+            else
+                return null;
+        }
+
+        public static DataRow GetUserById(int id)
+        {
+            SqlConnection con = DbConfig.GetConnection();
+            con.Open();
+
+            string query = "SELECT * FROM UserTable WHERE ID=@ID";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@ID", id);
+
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            con.Close();
+
+            if (dt.Rows.Count == 1)
+                return dt.Rows[0];
+            else
+                return null;
+        }
+
+
         public static bool ReadUser(string username, string password)
         {
             SqlConnection con = DbConfig.GetConnection();

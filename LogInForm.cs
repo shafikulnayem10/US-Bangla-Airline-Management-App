@@ -19,46 +19,81 @@ namespace US_Bangla_Airline_Management_App
             InitializeComponent();
         }
 
-       
 
-private void LogInButton_Click(object sender, EventArgs e)
-    {
-       
-        string username = LogInFormUserNameTextBox.Text;
-        string password = LogInFormPassTxtBox.Text;
 
-      
-        if (username == "" || password == "")
+        private void LogInButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please enter username and password");
-            return;
-        }
+            string username = LogInFormUserNameTextBox.Text.Trim();
+            string password = LogInFormPassTxtBox.Text.Trim();
 
-       
-        bool isValidUser = User.ReadUser(username, password);
+            // 🔴 Empty check
+            if (username == "" || password == "")
+            {
+                MessageBox.Show("Please enter username and password");
+                return;
+            }
 
-        if (isValidUser)
-        {
+            // 🔍 STEP 1: Get user from DB
+            DataRow user = User.GetUserByUsername(username);
+
+            if (user == null)
+            {
+                MessageBox.Show("Username or Password incorrect");
+                return;
+            }
+
+            // 🔐 STEP 2: Password & Status validation (SAFE)
+            string dbPassword = user["Password"].ToString().Trim();
+            int status = Convert.ToInt32(user["Status"]);
+
+            if (dbPassword != password)
+            {
+                MessageBox.Show("Username or Password incorrect");
+                return;
+            }
+
+            if (status != 1)
+            {
+                MessageBox.Show("User account is inactive");
+                return;
+            }
+
+            // 🧠 STEP 3: Store Logged-in user (SESSION)
+            LoggedInUser.ID = Convert.ToInt32(user["ID"]);
+            LoggedInUser.UserName = user["UserName"].ToString();
+            LoggedInUser.Role = user["Role"].ToString().Trim();
+            LoggedInUser.Status = status;
+
+            // 🎯 STEP 4: Role-based navigation
             this.Hide();
-            AdminDashboard ad = new AdminDashboard();
-            ad.Show();
+
+            string role = LoggedInUser.Role.ToLower();
+
+            if (role == "admin")
+            {
+                new AdminDashboard().Show();
+            }
+            else if (role == "customer")
+            {
+                MessageBox.Show("Customer Dashboard not implemented yet");
+                // new CustomerDashboard().Show();
+            }
+            else if (role == "counterstaff")
+            {
+                MessageBox.Show("Counter Staff Dashboard not implemented yet");
+                // new CounterStaffDashboard().Show();
+            }
+            else
+            {
+                MessageBox.Show("Unknown role: " + LoggedInUser.Role);
+                this.Show();
+            }
         }
-        else
+
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Username or Password incorrect",
-                "Login Failed",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-        }
-    }
-
-
-
-    private void button1_Click(object sender, EventArgs e)
-        {
-          
-
 
             regis If = new regis();
             If.Show();

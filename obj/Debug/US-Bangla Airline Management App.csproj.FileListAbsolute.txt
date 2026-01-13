@@ -47,3 +47,4 @@ E:\Desktop\AIUB\FALL25-26\OOP-2\FT\Project Doc\Main Project\US-Bangla-Airline-Ma
 E:\Desktop\AIUB\FALL25-26\OOP-2\FT\Project Doc\Main Project\US-Bangla-Airline-Management-App\obj\Debug\US_Bangla_Airline_Management_App.SingleUser.resources
 E:\Desktop\AIUB\FALL25-26\OOP-2\FT\Project Doc\Main Project\US-Bangla-Airline-Management-App\obj\Debug\US_Bangla_Airline_Management_App.AddFlightForm.resources
 E:\Desktop\AIUB\FALL25-26\OOP-2\FT\Project Doc\Main Project\US-Bangla-Airline-Management-App\obj\Debug\US_Bangla_Airline_Management_App.SingleFlightForm.resources
+E:\Desktop\AIUB\FALL25-26\OOP-2\FT\Project Doc\Main Project\US-Bangla-Airline-Management-App\obj\Debug\US_Bangla_Airline_Management_App.AdminProfileForm.resources

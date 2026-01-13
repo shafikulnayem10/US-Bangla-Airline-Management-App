@@ -32,7 +32,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardFlightListBtn = new System.Windows.Forms.Button();
             this.AdminDashBoardFlightBookingListBtn = new System.Windows.Forms.Button();
             this.AdminDashboardProfileBtn = new System.Windows.Forms.Button();
-            this.AdminDashboardBackBtn = new System.Windows.Forms.Button();
+            this.AdminDashboardLogOutBtn = new System.Windows.Forms.Button();
             this.AdminDashBoardUserList = new System.Windows.Forms.Button();
             this.AdminDashBoardTitleLabel = new System.Windows.Forms.Label();
             this.AdminDashBoardAircarftListBtn = new System.Windows.Forms.Button();
@@ -65,17 +65,17 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardProfileBtn.TabIndex = 2;
             this.AdminDashboardProfileBtn.Text = "Profile";
             this.AdminDashboardProfileBtn.UseVisualStyleBackColor = true;
-            this.AdminDashboardProfileBtn.Click += new System.EventHandler(this.button3_Click);
+            this.AdminDashboardProfileBtn.Click += new System.EventHandler(this.AdminDashboardProfilebtn);
             // 
-            // AdminDashboardBackBtn
+            // AdminDashboardLogOutBtn
             // 
-            this.AdminDashboardBackBtn.Location = new System.Drawing.Point(270, 359);
-            this.AdminDashboardBackBtn.Name = "AdminDashboardBackBtn";
-            this.AdminDashboardBackBtn.Size = new System.Drawing.Size(262, 49);
-            this.AdminDashboardBackBtn.TabIndex = 3;
-            this.AdminDashboardBackBtn.Text = "Back ";
-            this.AdminDashboardBackBtn.UseVisualStyleBackColor = true;
-            this.AdminDashboardBackBtn.Click += new System.EventHandler(this.AdminDashboardBackBtn_Click);
+            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(270, 359);
+            this.AdminDashboardLogOutBtn.Name = "AdminDashboardLogOutBtn";
+            this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(262, 49);
+            this.AdminDashboardLogOutBtn.TabIndex = 3;
+            this.AdminDashboardLogOutBtn.Text = "Log Out";
+            this.AdminDashboardLogOutBtn.UseVisualStyleBackColor = true;
+            this.AdminDashboardLogOutBtn.Click += new System.EventHandler(this.AdminDashboardLogOutBtn_Click);
             // 
             // AdminDashBoardUserList
             // 
@@ -115,7 +115,7 @@ namespace US_Bangla_Airline_Management_App
             this.Controls.Add(this.AdminDashBoardAircarftListBtn);
             this.Controls.Add(this.AdminDashBoardTitleLabel);
             this.Controls.Add(this.AdminDashBoardUserList);
-            this.Controls.Add(this.AdminDashboardBackBtn);
+            this.Controls.Add(this.AdminDashboardLogOutBtn);
             this.Controls.Add(this.AdminDashboardProfileBtn);
             this.Controls.Add(this.AdminDashBoardFlightBookingListBtn);
             this.Controls.Add(this.AdminDashboardFlightListBtn);
@@ -131,7 +131,7 @@ namespace US_Bangla_Airline_Management_App
         private System.Windows.Forms.Button AdminDashboardFlightListBtn;
         private System.Windows.Forms.Button AdminDashBoardFlightBookingListBtn;
         private System.Windows.Forms.Button AdminDashboardProfileBtn;
-        private System.Windows.Forms.Button AdminDashboardBackBtn;
+        private System.Windows.Forms.Button AdminDashboardLogOutBtn;
         private System.Windows.Forms.Button AdminDashBoardUserList;
         private System.Windows.Forms.Label AdminDashBoardTitleLabel;
         private System.Windows.Forms.Button AdminDashBoardAircarftListBtn;

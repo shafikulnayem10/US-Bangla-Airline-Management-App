@@ -47,13 +47,35 @@ namespace US_Bangla_Airline_Management_App
             AF.Show();
 
         }
-
+/*
         private void AdminDashboardBackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             LogInForm LF = new LogInForm();
             LF.Show();
 
+        }
+*/
+
+        private void AdminDashboardProfilebtn(object sender, EventArgs e)
+        {
+            if (!LoggedInUser.IsLoggedIn)
+            {
+                MessageBox.Show("Session expired. Please login again.");
+                return;
+            }
+
+            AdminProfileForm frm =
+                new AdminProfileForm(LoggedInUser.ID);
+
+            frm.ShowDialog();
+        }
+
+        private void AdminDashboardLogOutBtn_Click(object sender, EventArgs e)
+        {
+            LoggedInUser.Logout();
+            this.Hide();
+            new LogInForm().Show();
         }
     }
 }

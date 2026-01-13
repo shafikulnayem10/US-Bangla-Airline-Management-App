@@ -58,6 +58,12 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminProfileForm.Designer.cs">
+      <DependentUpon>AdminProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllFlights.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,7 @@
     </Compile>
     <Compile Include="DbConfig.cs" />
     <Compile Include="Flight.cs" />
+    <Compile Include="LoggedInUser.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminProfileForm.resx">
+      <DependentUpon>AdminProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllFlights.resx">
       <DependentUpon>AllFlights.cs</DependentUpon>

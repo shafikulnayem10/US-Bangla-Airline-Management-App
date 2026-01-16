@@ -1,6 +1,6 @@
 ﻿namespace US_Bangla_Airline_Management_App
 {
-    partial class AdminProfileForm
+    partial class UserProfileForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Panel MainPanel;
@@ -123,6 +123,10 @@
             // AdminProfileRoleCmbBox
             // 
             this.AdminProfileRoleCmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AdminProfileRoleCmbBox.Items.AddRange(new object[] {
+            "Admin",
+            "Customer",
+            "CounterStaff"});
             this.AdminProfileRoleCmbBox.Location = new System.Drawing.Point(160, 165);
             this.AdminProfileRoleCmbBox.Name = "AdminProfileRoleCmbBox";
             this.AdminProfileRoleCmbBox.Size = new System.Drawing.Size(180, 24);
@@ -164,6 +168,7 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

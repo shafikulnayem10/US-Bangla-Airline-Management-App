@@ -12,7 +12,7 @@ namespace US_Bangla_Airline_Management_App
         public static SqlConnection GetConnection()
         {
             return new SqlConnection(
-                @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=USB-DB;Integrated Security=True");
+                @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=US-BanglaAirlineDB;Integrated Security=True");
            
         }
     }

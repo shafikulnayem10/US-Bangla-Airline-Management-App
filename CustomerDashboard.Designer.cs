@@ -41,10 +41,9 @@ namespace US_Bangla_Airline_Management_App
             this.CustomerDashBoardTitleLabel.AutoSize = true;
             this.CustomerDashBoardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.CustomerDashBoardTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.CustomerDashBoardTitleLabel.Location = new System.Drawing.Point(240, 37);
-            this.CustomerDashBoardTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CustomerDashBoardTitleLabel.Location = new System.Drawing.Point(320, 46);
             this.CustomerDashBoardTitleLabel.Name = "CustomerDashBoardTitleLabel";
-            this.CustomerDashBoardTitleLabel.Size = new System.Drawing.Size(256, 32);
+            this.CustomerDashBoardTitleLabel.Size = new System.Drawing.Size(314, 41);
             this.CustomerDashBoardTitleLabel.TabIndex = 8;
             this.CustomerDashBoardTitleLabel.Text = "Customer Dashboard";
             // 
@@ -54,10 +53,10 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardLogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardLogOutBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardLogOutBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(417, 341);
-            this.AdminDashboardLogOutBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(556, 420);
+            this.AdminDashboardLogOutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminDashboardLogOutBtn.Name = "AdminDashboardLogOutBtn";
-            this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(196, 40);
+            this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(261, 49);
             this.AdminDashboardLogOutBtn.TabIndex = 10;
             this.AdminDashboardLogOutBtn.Text = "🚪 Log Out";
             this.AdminDashboardLogOutBtn.UseVisualStyleBackColor = false;
@@ -69,13 +68,14 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardProfileBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardProfileBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardProfileBtn.Location = new System.Drawing.Point(589, 29);
-            this.AdminDashboardProfileBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AdminDashboardProfileBtn.Location = new System.Drawing.Point(785, 36);
+            this.AdminDashboardProfileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AdminDashboardProfileBtn.Name = "AdminDashboardProfileBtn";
-            this.AdminDashboardProfileBtn.Size = new System.Drawing.Size(170, 56);
+            this.AdminDashboardProfileBtn.Size = new System.Drawing.Size(227, 69);
             this.AdminDashboardProfileBtn.TabIndex = 11;
             this.AdminDashboardProfileBtn.Text = " Profile";
             this.AdminDashboardProfileBtn.UseVisualStyleBackColor = false;
+            this.AdminDashboardProfileBtn.Click += new System.EventHandler(this.CustomerDashboardProfileBtn_Click);
             // 
             // AvailableFlightBtn
             // 
@@ -83,10 +83,10 @@ namespace US_Bangla_Airline_Management_App
             this.AvailableFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AvailableFlightBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AvailableFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.AvailableFlightBtn.Location = new System.Drawing.Point(246, 146);
-            this.AvailableFlightBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AvailableFlightBtn.Location = new System.Drawing.Point(328, 180);
+            this.AvailableFlightBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AvailableFlightBtn.Name = "AvailableFlightBtn";
-            this.AvailableFlightBtn.Size = new System.Drawing.Size(259, 70);
+            this.AvailableFlightBtn.Size = new System.Drawing.Size(345, 86);
             this.AvailableFlightBtn.TabIndex = 13;
             this.AvailableFlightBtn.Text = "✈ Available Flight";
             this.AvailableFlightBtn.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@ namespace US_Bangla_Airline_Management_App
             this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Back.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Back.ForeColor = System.Drawing.Color.White;
-            this.Back.Location = new System.Drawing.Point(184, 341);
-            this.Back.Margin = new System.Windows.Forms.Padding(2);
+            this.Back.Location = new System.Drawing.Point(245, 420);
+            this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(196, 40);
+            this.Back.Size = new System.Drawing.Size(261, 49);
             this.Back.TabIndex = 14;
             this.Back.Text = "🚪 Back";
             this.Back.UseVisualStyleBackColor = false;
@@ -109,15 +109,16 @@ namespace US_Bangla_Airline_Management_App
             // 
             // CustomerDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.CustomerDashBoardTitleLabel);
             this.Controls.Add(this.AdminDashboardLogOutBtn);
             this.Controls.Add(this.AdminDashboardProfileBtn);
             this.Controls.Add(this.AvailableFlightBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
             this.ResumeLayout(false);

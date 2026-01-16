@@ -12,6 +12,13 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class AdminDashboard : Form
     {
+        private Button AdminDashboardFlightListBtn;
+        private Button AdminDashBoardFlightBookingListBtn;
+        private Button AdminDashboardProfileBtn;
+        private Button AdminDashboardLogOutBtn;
+        private Button AdminDashBoardUserList;
+        private Label AdminDashBoardTitleLabel;
+        private Button AdminDashBoardAircarftListBtn;
         public AdminDashboard()
         {
             InitializeComponent();
@@ -59,16 +66,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void AdminDashboardProfilebtn(object sender, EventArgs e)
         {
-            if (!LoggedInUser.IsLoggedIn)
-            {
-                MessageBox.Show("Session expired. Please login again.");
-                return;
-            }
-
-            AdminProfileForm frm =
-                new AdminProfileForm(LoggedInUser.ID);
-
-            frm.ShowDialog();
+            ProfileNavigator.OpenProfile();
         }
 
         private void AdminDashboardLogOutBtn_Click(object sender, EventArgs e)
@@ -78,13 +76,7 @@ namespace US_Bangla_Airline_Management_App
             new LogInForm().Show();
         }
 
-        private Button AdminDashboardFlightListBtn;
-        private Button AdminDashBoardFlightBookingListBtn;
-        private Button AdminDashboardProfileBtn;
-        private Button AdminDashboardLogOutBtn;
-        private Button AdminDashBoardUserList;
-        private Label AdminDashBoardTitleLabel;
-        private Button AdminDashBoardAircarftListBtn;
+  
 
         private void InitializeComponent()
         {

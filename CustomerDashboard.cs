@@ -33,5 +33,11 @@ namespace US_Bangla_Airline_Management_App
             AvailableFlight flightsForm = new AvailableFlight();
             flightsForm.ShowDialog();
         }
+
+        private void CustomerDashboardProfileBtn_Click(object sender, EventArgs e)
+        {
+            ProfileNavigator.OpenProfile();
+    
+        }
     }
 }

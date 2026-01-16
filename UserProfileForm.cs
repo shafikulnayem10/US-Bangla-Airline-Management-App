@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace US_Bangla_Airline_Management_App
 {
-    public partial class AdminProfileForm : Form
+    public partial class UserProfileForm : Form
     {
         int adminId;
         string oldRole;
 
 
 
-        public AdminProfileForm(int id)
+        public UserProfileForm(int id)
         {
             InitializeComponent();
             adminId = id;
@@ -35,7 +35,7 @@ namespace US_Bangla_Airline_Management_App
             AdminProfileIDTxtBox.ReadOnly = true;
             AdminProfileUserNameTxtBox.ReadOnly = true;
 
-            // 🔐 STORE OLD ROLE
+            //  STORE OLD ROLE
             oldRole = user["Role"].ToString().Trim();
         }
 
@@ -54,7 +54,7 @@ namespace US_Bangla_Airline_Management_App
 
             MessageBox.Show("Profile updated successfully");
 
-            // 🔥 ROLE CHANGED → FORCE LOGOUT
+          
             if (oldRole.ToLower() != newRole.ToLower())
             {
                 MessageBox.Show(
@@ -64,13 +64,13 @@ namespace US_Bangla_Airline_Management_App
                     MessageBoxIcon.Information
                 );
 
-                // 🔐 Clear session
+               
                 LoggedInUser.ID = 0;
                 LoggedInUser.UserName = null;
                 LoggedInUser.Role = null;
                 LoggedInUser.Status = 0;
 
-                // 🔁 Close all forms except Login
+               
                 foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
                 {
                     if (!(f is LogInForm))
@@ -86,9 +86,28 @@ namespace US_Bangla_Airline_Management_App
         private void AdminProfileFormBackBtn_click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminDashboard a = new AdminDashboard();
-            a.Show();
 
+            string role = LoggedInUser.Role?.ToLower();
+
+            if (role == "admin")
+            {
+                new AdminDashboard().Show();
+            }
+            else if (role == "customer")
+            {
+                new CustomerDashboard().Show();
+            }
+            else if (role == "staff")
+            {
+               // new StaffDashboard().Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid role. Please login again.");
+                LoggedInUser.Logout();
+                new LogInForm().Show();
+            }
         }
+
     }
 }

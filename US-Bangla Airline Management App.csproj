@@ -58,6 +58,31 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="AircraftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AircraftForm.Designer.cs">
+      <DependentUpon>AircraftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aircraft.cs" />
+    <Compile Include="BookingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingList.Designer.cs">
+      <DependentUpon>BookingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="staffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffForm.Designer.cs">
+      <DependentUpon>staffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="staffdashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="staffdashboard.Designer.cs">
+      <DependentUpon>staffdashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +155,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AircraftForm.resx">
+      <DependentUpon>AircraftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingList.resx">
+      <DependentUpon>BookingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffdashboard.resx">
+      <DependentUpon>staffdashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffForm.resx">
+      <DependentUpon>staffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserProfileForm.resx">
       <DependentUpon>UserProfileForm.cs</DependentUpon>

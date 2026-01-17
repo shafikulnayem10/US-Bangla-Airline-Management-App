@@ -16,6 +16,7 @@ namespace US_Bangla_Airline_Management_App
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			
 	Application.Run(new LogInForm());
 			 Application.Run(new regis());
 			 //Application.Run(new BookFlight());

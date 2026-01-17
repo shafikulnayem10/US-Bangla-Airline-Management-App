@@ -44,7 +44,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void AdminDashBoardAircarftListBtn_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void AdminDashboardFlightListBtn_Click(object sender, EventArgs e)
@@ -115,6 +115,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardFlightBookingListBtn.TabIndex = 5;
             this.AdminDashBoardFlightBookingListBtn.Text = "📄 Booking Flights List";
             this.AdminDashBoardFlightBookingListBtn.UseVisualStyleBackColor = false;
+            this.AdminDashBoardFlightBookingListBtn.Click += new System.EventHandler(this.AdminDashBoardFlightBookingListBtn_Click);
             // 
             // AdminDashboardProfileBtn
             // 
@@ -203,6 +204,13 @@ namespace US_Bangla_Airline_Management_App
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void AdminDashBoardFlightBookingListBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BookingList BK = new BookingList();
+            BK.Show();
         }
     }
 }

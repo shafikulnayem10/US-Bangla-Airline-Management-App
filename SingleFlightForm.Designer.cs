@@ -226,6 +226,7 @@
             this.SingleFlightFormUpdateBtn.TabIndex = 16;
             this.SingleFlightFormUpdateBtn.Text = "Update";
             this.SingleFlightFormUpdateBtn.UseVisualStyleBackColor = false;
+            this.SingleFlightFormUpdateBtn.Click += new System.EventHandler(this.SingleFlightFormUpdateBtn_Click_1);
             // 
             // SingleFlightFormBackBtn
             // 

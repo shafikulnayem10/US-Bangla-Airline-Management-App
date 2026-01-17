@@ -1,17 +1,14 @@
-﻿
-namespace US_Bangla_Airline_Management_App
+﻿namespace US_Bangla_Airline_Management_App
 {
     partial class CustomerDashboard
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label CustomerDashBoardTitleLabel;
+        private System.Windows.Forms.Button AdminDashboardLogOutBtn;
+        private System.Windows.Forms.Button AdminDashboardProfileBtn;
+        private System.Windows.Forms.Button AvailableFlightBtn;
+        private System.Windows.Forms.DataGridView CustomerBookingHistoryGridView;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,19 +18,15 @@ namespace US_Bangla_Airline_Management_App
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.CustomerDashBoardTitleLabel = new System.Windows.Forms.Label();
             this.AdminDashboardLogOutBtn = new System.Windows.Forms.Button();
             this.AdminDashboardProfileBtn = new System.Windows.Forms.Button();
             this.AvailableFlightBtn = new System.Windows.Forms.Button();
-            this.Back = new System.Windows.Forms.Button();
+            this.CustomerBookingHistoryGridView = new System.Windows.Forms.DataGridView();
+            this.CustomerDashboardFormCancelBooking = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerBookingHistoryGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerDashBoardTitleLabel
@@ -41,7 +34,7 @@ namespace US_Bangla_Airline_Management_App
             this.CustomerDashBoardTitleLabel.AutoSize = true;
             this.CustomerDashBoardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.CustomerDashBoardTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
-            this.CustomerDashBoardTitleLabel.Location = new System.Drawing.Point(320, 46);
+            this.CustomerDashBoardTitleLabel.Location = new System.Drawing.Point(338, 64);
             this.CustomerDashBoardTitleLabel.Name = "CustomerDashBoardTitleLabel";
             this.CustomerDashBoardTitleLabel.Size = new System.Drawing.Size(314, 41);
             this.CustomerDashBoardTitleLabel.TabIndex = 8;
@@ -53,8 +46,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardLogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardLogOutBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardLogOutBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(556, 420);
-            this.AdminDashboardLogOutBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(160, 446);
             this.AdminDashboardLogOutBtn.Name = "AdminDashboardLogOutBtn";
             this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(261, 49);
             this.AdminDashboardLogOutBtn.TabIndex = 10;
@@ -68,8 +60,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardProfileBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardProfileBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardProfileBtn.Location = new System.Drawing.Point(785, 36);
-            this.AdminDashboardProfileBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AdminDashboardProfileBtn.Location = new System.Drawing.Point(52, 36);
             this.AdminDashboardProfileBtn.Name = "AdminDashboardProfileBtn";
             this.AdminDashboardProfileBtn.Size = new System.Drawing.Size(227, 69);
             this.AdminDashboardProfileBtn.TabIndex = 11;
@@ -83,8 +74,7 @@ namespace US_Bangla_Airline_Management_App
             this.AvailableFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AvailableFlightBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AvailableFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.AvailableFlightBtn.Location = new System.Drawing.Point(328, 180);
-            this.AvailableFlightBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AvailableFlightBtn.Location = new System.Drawing.Point(87, 228);
             this.AvailableFlightBtn.Name = "AvailableFlightBtn";
             this.AvailableFlightBtn.Size = new System.Drawing.Size(345, 86);
             this.AvailableFlightBtn.TabIndex = 13;
@@ -92,20 +82,36 @@ namespace US_Bangla_Airline_Management_App
             this.AvailableFlightBtn.UseVisualStyleBackColor = false;
             this.AvailableFlightBtn.Click += new System.EventHandler(this.AvailableFlightBtn_Click);
             // 
-            // Back
+            // CustomerBookingHistoryGridView
             // 
-            this.Back.BackColor = System.Drawing.Color.Blue;
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.Back.ForeColor = System.Drawing.Color.White;
-            this.Back.Location = new System.Drawing.Point(245, 420);
-            this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(261, 49);
-            this.Back.TabIndex = 14;
-            this.Back.Text = "🚪 Back";
-            this.Back.UseVisualStyleBackColor = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.CustomerBookingHistoryGridView.AllowUserToAddRows = false;
+            this.CustomerBookingHistoryGridView.AllowUserToDeleteRows = false;
+            this.CustomerBookingHistoryGridView.AllowUserToResizeColumns = false;
+            this.CustomerBookingHistoryGridView.AllowUserToResizeRows = false;
+            this.CustomerBookingHistoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CustomerBookingHistoryGridView.ColumnHeadersHeight = 29;
+            this.CustomerBookingHistoryGridView.Location = new System.Drawing.Point(520, 130);
+            this.CustomerBookingHistoryGridView.MultiSelect = false;
+            this.CustomerBookingHistoryGridView.Name = "CustomerBookingHistoryGridView";
+            this.CustomerBookingHistoryGridView.ReadOnly = true;
+            this.CustomerBookingHistoryGridView.RowHeadersWidth = 51;
+            this.CustomerBookingHistoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CustomerBookingHistoryGridView.Size = new System.Drawing.Size(535, 184);
+            this.CustomerBookingHistoryGridView.TabIndex = 14;
+            // 
+            // CustomerDashboardFormCancelBooking
+            // 
+            this.CustomerDashboardFormCancelBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.CustomerDashboardFormCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CustomerDashboardFormCancelBooking.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.CustomerDashboardFormCancelBooking.ForeColor = System.Drawing.Color.White;
+            this.CustomerDashboardFormCancelBooking.Location = new System.Drawing.Point(708, 320);
+            this.CustomerDashboardFormCancelBooking.Name = "CustomerDashboardFormCancelBooking";
+            this.CustomerDashboardFormCancelBooking.Size = new System.Drawing.Size(175, 62);
+            this.CustomerDashboardFormCancelBooking.TabIndex = 15;
+            this.CustomerDashboardFormCancelBooking.Text = "Cancel Booking";
+            this.CustomerDashboardFormCancelBooking.UseVisualStyleBackColor = false;
+            this.CustomerDashboardFormCancelBooking.Click += new System.EventHandler(this.CustomerDashboardFormCancelBooking_Click);
             // 
             // CustomerDashboard
             // 
@@ -113,24 +119,21 @@ namespace US_Bangla_Airline_Management_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.Back);
+            this.Controls.Add(this.CustomerDashboardFormCancelBooking);
+            this.Controls.Add(this.CustomerBookingHistoryGridView);
             this.Controls.Add(this.CustomerDashBoardTitleLabel);
             this.Controls.Add(this.AdminDashboardLogOutBtn);
             this.Controls.Add(this.AdminDashboardProfileBtn);
             this.Controls.Add(this.AvailableFlightBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CustomerDashboard";
             this.Text = "CustomerDashboard";
+            this.Load += new System.EventHandler(this.CustomerDashboard_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerBookingHistoryGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
-        private System.Windows.Forms.Label CustomerDashBoardTitleLabel;
-        private System.Windows.Forms.Button AdminDashboardLogOutBtn;
-        private System.Windows.Forms.Button AdminDashboardProfileBtn;
-        private System.Windows.Forms.Button AvailableFlightBtn;
-        private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Button CustomerDashboardFormCancelBooking;
     }
 }

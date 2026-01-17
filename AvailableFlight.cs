@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace US_Bangla_Airline_Management_App
 {
-    
     public partial class AvailableFlight : Form
     {
         public AvailableFlight()
@@ -19,82 +13,108 @@ namespace US_Bangla_Airline_Management_App
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void AvailableFlight_Load(object sender, EventArgs e)
         {
-           
+            LoadFlights();
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void show_Click(object sender, EventArgs e) { }
 
-        private void show_Click(object sender, EventArgs e)
+        private void LoadFlights()
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=USB-DB;Integrated Security=True";
+            SqlConnection con = DbConfig.GetConnection();
 
-            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            try
             {
-                try
-                {
-                    sqlCon.Open();
+                con.Open();
 
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT * FROM FlightTable", sqlCon);
-                    DataTable dtbl = new DataTable();
-                    sqlDa.Fill(dtbl);
+                string query = @"
+            SELECT
+                FlightID        AS [Flight ID],
+                Departure       AS [Departure],
+                Destination     AS [Destination],
+                DepartureDateTime AS [Departure Time],
+                ArrivalDateTime   AS [Arrival Time],
+                TotalSeats      AS [Total Seats],
+                AircraftNo      AS [Aircraft No],
+                FlightStatus    AS [Status]
+            FROM FlightTable
+        ";
 
-                    dgvflight.DataSource = dtbl;   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                dgvflight.DataSource = dt;
+
+                // UI polish
+                dgvflight.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvflight.ReadOnly = true;
+                dgvflight.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvflight.MultiSelect = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 
+
         private void cancel_Click(object sender, EventArgs e)
         {
-            CustomerDashboard customerForm = new CustomerDashboard();
-            customerForm.ShowDialog();
+            this.Hide();
+            new CustomerDashboard().Show();
         }
 
         private void confirm_Click(object sender, EventArgs e)
         {
-            BookingForm bookingForm = new BookingForm();
+            if (dgvflight.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(
+                    "Please select a flight first.",
+                    "No Selection",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            DataGridViewRow row = dgvflight.SelectedRows[0];
+
+            int flightId = Convert.ToInt32(row.Cells["Flight ID"].Value);
+
+            string departure = row.Cells["Departure"].Value.ToString();
+            string destination = row.Cells["Destination"].Value.ToString();
+            string depDateTime = row.Cells["Departure Time"].Value.ToString();
+            string arrDateTime = row.Cells["Arrival Time"].Value.ToString();
+            string aircraftNo = row.Cells["Aircraft No"].Value.ToString();
+            string flightStatus = row.Cells["Status"].Value.ToString();
+
+            BookingForm bookingForm = new BookingForm(
+                flightId,
+                departure,
+                destination,
+                depDateTime,
+                arrDateTime,
+                aircraftNo,
+                flightStatus
+            );
+
+            this.Hide();
             bookingForm.ShowDialog();
-           
         }
-     
+
+
+
+
         private void dgvflight_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-          
-            if (e.RowIndex < 0) return;
-
-            try
-            {
-                DataGridViewRow row = dgvflight.Rows[e.RowIndex];
-
-            
-                string departure = row.Cells[1].Value?.ToString() ?? "";  
-                string destination = row.Cells[2].Value?.ToString() ?? "";  
-                string depDateTime = row.Cells[3].Value?.ToString() ?? "";  
-                string arrDateTime = row.Cells[4].Value?.ToString() ?? ""; 
-                string aircraftNo = row.Cells[6].Value?.ToString() ?? "";  
-                string flightStatus = row.Cells[7].Value?.ToString() ?? "0"; 
-
-                BookingForm bookingForm = new BookingForm(departure,
-            destination,
-            depDateTime,
-            arrDateTime,
-            aircraftNo,
-            flightStatus);
-
-                bookingForm.ShowDialog(); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("সমস্যা: " + ex.Message);
-            }
-
-
-
-
+            // Nothing needed here
         }
+
     }
 }

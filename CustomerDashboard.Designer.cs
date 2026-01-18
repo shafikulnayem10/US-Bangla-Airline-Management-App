@@ -32,6 +32,7 @@
             // CustomerDashBoardTitleLabel
             // 
             this.CustomerDashBoardTitleLabel.AutoSize = true;
+            this.CustomerDashBoardTitleLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CustomerDashBoardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.CustomerDashBoardTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.CustomerDashBoardTitleLabel.Location = new System.Drawing.Point(338, 64);
@@ -46,17 +47,17 @@
             this.AdminDashboardLogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardLogOutBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardLogOutBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(160, 446);
+            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(99, 435);
             this.AdminDashboardLogOutBtn.Name = "AdminDashboardLogOutBtn";
             this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(261, 49);
             this.AdminDashboardLogOutBtn.TabIndex = 10;
-            this.AdminDashboardLogOutBtn.Text = "🚪 Log Out";
+            this.AdminDashboardLogOutBtn.Text = " Log Out";
             this.AdminDashboardLogOutBtn.UseVisualStyleBackColor = false;
             this.AdminDashboardLogOutBtn.Click += new System.EventHandler(this.AdminDashboardLogOutBtn_Click);
             // 
             // AdminDashboardProfileBtn
             // 
-            this.AdminDashboardProfileBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.AdminDashboardProfileBtn.BackColor = System.Drawing.Color.LightSeaGreen;
             this.AdminDashboardProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardProfileBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardProfileBtn.ForeColor = System.Drawing.Color.White;
@@ -74,11 +75,11 @@
             this.AvailableFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AvailableFlightBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AvailableFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.AvailableFlightBtn.Location = new System.Drawing.Point(87, 228);
+            this.AvailableFlightBtn.Location = new System.Drawing.Point(87, 245);
             this.AvailableFlightBtn.Name = "AvailableFlightBtn";
             this.AvailableFlightBtn.Size = new System.Drawing.Size(345, 86);
             this.AvailableFlightBtn.TabIndex = 13;
-            this.AvailableFlightBtn.Text = "✈ Available Flight";
+            this.AvailableFlightBtn.Text = "Available Flight";
             this.AvailableFlightBtn.UseVisualStyleBackColor = false;
             this.AvailableFlightBtn.Click += new System.EventHandler(this.AvailableFlightBtn_Click);
             // 
@@ -89,14 +90,15 @@
             this.CustomerBookingHistoryGridView.AllowUserToResizeColumns = false;
             this.CustomerBookingHistoryGridView.AllowUserToResizeRows = false;
             this.CustomerBookingHistoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CustomerBookingHistoryGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.CustomerBookingHistoryGridView.ColumnHeadersHeight = 29;
-            this.CustomerBookingHistoryGridView.Location = new System.Drawing.Point(520, 130);
+            this.CustomerBookingHistoryGridView.Location = new System.Drawing.Point(511, 130);
             this.CustomerBookingHistoryGridView.MultiSelect = false;
             this.CustomerBookingHistoryGridView.Name = "CustomerBookingHistoryGridView";
             this.CustomerBookingHistoryGridView.ReadOnly = true;
             this.CustomerBookingHistoryGridView.RowHeadersWidth = 51;
             this.CustomerBookingHistoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.CustomerBookingHistoryGridView.Size = new System.Drawing.Size(535, 184);
+            this.CustomerBookingHistoryGridView.Size = new System.Drawing.Size(544, 276);
             this.CustomerBookingHistoryGridView.TabIndex = 14;
             // 
             // CustomerDashboardFormCancelBooking
@@ -105,7 +107,7 @@
             this.CustomerDashboardFormCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CustomerDashboardFormCancelBooking.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.CustomerDashboardFormCancelBooking.ForeColor = System.Drawing.Color.White;
-            this.CustomerDashboardFormCancelBooking.Location = new System.Drawing.Point(708, 320);
+            this.CustomerDashboardFormCancelBooking.Location = new System.Drawing.Point(715, 412);
             this.CustomerDashboardFormCancelBooking.Name = "CustomerDashboardFormCancelBooking";
             this.CustomerDashboardFormCancelBooking.Size = new System.Drawing.Size(175, 62);
             this.CustomerDashboardFormCancelBooking.TabIndex = 15;

@@ -18,6 +18,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(regis));
             this.panelMain = new System.Windows.Forms.Panel();
             this.SignUpLabel = new System.Windows.Forms.Label();
             this.RegisFormFullNameLabel = new System.Windows.Forms.Label();
@@ -30,8 +31,8 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormIDTxtForm = new System.Windows.Forms.TextBox();
             this.RegisFormPasswordTxtBox = new System.Windows.Forms.TextBox();
             this.RegisFormRoleComBox = new System.Windows.Forms.ComboBox();
-            this.RegisFormSignUpBtn = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.RegisFormSignUpBtn = new System.Windows.Forms.Button();
             this.acc = new System.Windows.Forms.Label();
             this.RegisFormLogInNowBtn = new System.Windows.Forms.Button();
             this.copyright = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@ namespace US_Bangla_Airline_Management_App
             this.SignUpLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.SignUpLabel.Location = new System.Drawing.Point(200, 20);
             this.SignUpLabel.Name = "SignUpLabel";
-            this.SignUpLabel.Size = new System.Drawing.Size(131, 50);
+            this.SignUpLabel.Size = new System.Drawing.Size(159, 50);
             this.SignUpLabel.TabIndex = 0;
             this.SignUpLabel.Text = "Sign Up";
             // 
@@ -75,10 +76,50 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormFullNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.RegisFormFullNameLabel.Location = new System.Drawing.Point(60, 90);
             this.RegisFormFullNameLabel.Name = "RegisFormFullNameLabel";
-            this.RegisFormFullNameLabel.Size = new System.Drawing.Size(98, 25);
+            this.RegisFormFullNameLabel.Size = new System.Drawing.Size(101, 25);
             this.RegisFormFullNameLabel.TabIndex = 2;
             this.RegisFormFullNameLabel.Text = "Full Name";
             this.RegisFormFullNameLabel.Click += new System.EventHandler(this.FullName_Click);
+            // 
+            // RegisFormUserNameLabel
+            // 
+            this.RegisFormUserNameLabel.AutoSize = true;
+            this.RegisFormUserNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.RegisFormUserNameLabel.Location = new System.Drawing.Point(60, 135);
+            this.RegisFormUserNameLabel.Name = "RegisFormUserNameLabel";
+            this.RegisFormUserNameLabel.Size = new System.Drawing.Size(101, 25);
+            this.RegisFormUserNameLabel.TabIndex = 8;
+            this.RegisFormUserNameLabel.Text = "Username";
+            // 
+            // RegisFormIDLabel
+            // 
+            this.RegisFormIDLabel.AutoSize = true;
+            this.RegisFormIDLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.RegisFormIDLabel.Location = new System.Drawing.Point(60, 180);
+            this.RegisFormIDLabel.Name = "RegisFormIDLabel";
+            this.RegisFormIDLabel.Size = new System.Drawing.Size(32, 25);
+            this.RegisFormIDLabel.TabIndex = 9;
+            this.RegisFormIDLabel.Text = "ID";
+            // 
+            // RegisFormPasswordLabel
+            // 
+            this.RegisFormPasswordLabel.AutoSize = true;
+            this.RegisFormPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.RegisFormPasswordLabel.Location = new System.Drawing.Point(60, 225);
+            this.RegisFormPasswordLabel.Name = "RegisFormPasswordLabel";
+            this.RegisFormPasswordLabel.Size = new System.Drawing.Size(97, 25);
+            this.RegisFormPasswordLabel.TabIndex = 10;
+            this.RegisFormPasswordLabel.Text = "Password";
+            // 
+            // RegisFormRoleLabel
+            // 
+            this.RegisFormRoleLabel.AutoSize = true;
+            this.RegisFormRoleLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.RegisFormRoleLabel.Location = new System.Drawing.Point(60, 270);
+            this.RegisFormRoleLabel.Name = "RegisFormRoleLabel";
+            this.RegisFormRoleLabel.Size = new System.Drawing.Size(51, 25);
+            this.RegisFormRoleLabel.TabIndex = 15;
+            this.RegisFormRoleLabel.Text = "Role";
             // 
             // RegisFormNamexTxtBox
             // 
@@ -87,16 +128,6 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormNamexTxtBox.Name = "RegisFormNamexTxtBox";
             this.RegisFormNamexTxtBox.Size = new System.Drawing.Size(260, 32);
             this.RegisFormNamexTxtBox.TabIndex = 17;
-            // 
-            // RegisFormUserNameLabel
-            // 
-            this.RegisFormUserNameLabel.AutoSize = true;
-            this.RegisFormUserNameLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.RegisFormUserNameLabel.Location = new System.Drawing.Point(60, 135);
-            this.RegisFormUserNameLabel.Name = "RegisFormUserNameLabel";
-            this.RegisFormUserNameLabel.Size = new System.Drawing.Size(103, 25);
-            this.RegisFormUserNameLabel.TabIndex = 8;
-            this.RegisFormUserNameLabel.Text = "Username";
             // 
             // RegisFormUserNameTxtBox
             // 
@@ -107,16 +138,6 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormUserNameTxtBox.TabIndex = 18;
             this.RegisFormUserNameTxtBox.TextChanged += new System.EventHandler(this.RegisFormUserNameTxtBox_TextChanged);
             // 
-            // RegisFormIDLabel
-            // 
-            this.RegisFormIDLabel.AutoSize = true;
-            this.RegisFormIDLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.RegisFormIDLabel.Location = new System.Drawing.Point(60, 180);
-            this.RegisFormIDLabel.Name = "RegisFormIDLabel";
-            this.RegisFormIDLabel.Size = new System.Drawing.Size(29, 25);
-            this.RegisFormIDLabel.TabIndex = 9;
-            this.RegisFormIDLabel.Text = "ID";
-            // 
             // RegisFormIDTxtForm
             // 
             this.RegisFormIDTxtForm.Font = new System.Drawing.Font("Segoe UI", 11F);
@@ -124,16 +145,6 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormIDTxtForm.Name = "RegisFormIDTxtForm";
             this.RegisFormIDTxtForm.Size = new System.Drawing.Size(260, 32);
             this.RegisFormIDTxtForm.TabIndex = 20;
-            // 
-            // RegisFormPasswordLabel
-            // 
-            this.RegisFormPasswordLabel.AutoSize = true;
-            this.RegisFormPasswordLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.RegisFormPasswordLabel.Location = new System.Drawing.Point(60, 225);
-            this.RegisFormPasswordLabel.Name = "RegisFormPasswordLabel";
-            this.RegisFormPasswordLabel.Size = new System.Drawing.Size(91, 25);
-            this.RegisFormPasswordLabel.TabIndex = 10;
-            this.RegisFormPasswordLabel.Text = "Password";
             // 
             // RegisFormPasswordTxtBox
             // 
@@ -143,16 +154,6 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormPasswordTxtBox.Size = new System.Drawing.Size(260, 32);
             this.RegisFormPasswordTxtBox.TabIndex = 21;
             this.RegisFormPasswordTxtBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // RegisFormRoleLabel
-            // 
-            this.RegisFormRoleLabel.AutoSize = true;
-            this.RegisFormRoleLabel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.RegisFormRoleLabel.Location = new System.Drawing.Point(60, 270);
-            this.RegisFormRoleLabel.Name = "RegisFormRoleLabel";
-            this.RegisFormRoleLabel.Size = new System.Drawing.Size(48, 25);
-            this.RegisFormRoleLabel.TabIndex = 15;
-            this.RegisFormRoleLabel.Text = "Role";
             // 
             // RegisFormRoleComBox
             // 
@@ -169,7 +170,7 @@ namespace US_Bangla_Airline_Management_App
             // 
             // Cancel
             // 
-            this.Cancel.BackColor = System.Drawing.Color.FromArgb(231, 76, 60);
+            this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.ForeColor = System.Drawing.Color.White;
             this.Cancel.Location = new System.Drawing.Point(200, 310);
@@ -182,7 +183,7 @@ namespace US_Bangla_Airline_Management_App
             // 
             // RegisFormSignUpBtn
             // 
-            this.RegisFormSignUpBtn.BackColor = System.Drawing.Color.FromArgb(0, 92, 185);
+            this.RegisFormSignUpBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
             this.RegisFormSignUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisFormSignUpBtn.ForeColor = System.Drawing.Color.White;
             this.RegisFormSignUpBtn.Location = new System.Drawing.Point(360, 310);
@@ -198,17 +199,17 @@ namespace US_Bangla_Airline_Management_App
             this.acc.AutoSize = true;
             this.acc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.acc.ForeColor = System.Drawing.Color.Gray;
-            this.acc.Location = new System.Drawing.Point(410, 460);
+            this.acc.Location = new System.Drawing.Point(430, 460);
             this.acc.Name = "acc";
-            this.acc.Size = new System.Drawing.Size(194, 20);
+            this.acc.Size = new System.Drawing.Size(189, 20);
             this.acc.TabIndex = 26;
             this.acc.Text = "Already Have An Account ?";
             // 
             // RegisFormLogInNowBtn
             // 
             this.RegisFormLogInNowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegisFormLogInNowBtn.ForeColor = System.Drawing.Color.FromArgb(0, 92, 185);
-            this.RegisFormLogInNowBtn.Location = new System.Drawing.Point(430, 485);
+            this.RegisFormLogInNowBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(185)))));
+            this.RegisFormLogInNowBtn.Location = new System.Drawing.Point(460, 483);
             this.RegisFormLogInNowBtn.Name = "RegisFormLogInNowBtn";
             this.RegisFormLogInNowBtn.Size = new System.Drawing.Size(140, 32);
             this.RegisFormLogInNowBtn.TabIndex = 25;
@@ -223,7 +224,7 @@ namespace US_Bangla_Airline_Management_App
             this.copyright.ForeColor = System.Drawing.Color.Gray;
             this.copyright.Location = new System.Drawing.Point(390, 525);
             this.copyright.Name = "copyright";
-            this.copyright.Size = new System.Drawing.Size(233, 20);
+            this.copyright.Size = new System.Drawing.Size(275, 20);
             this.copyright.TabIndex = 16;
             this.copyright.Text = "© US-Bangla Airlines. All rights reserved";
             // 
@@ -231,18 +232,22 @@ namespace US_Bangla_Airline_Management_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(240, 242, 245);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.copyright);
             this.Controls.Add(this.RegisFormLogInNowBtn);
             this.Controls.Add(this.acc);
             this.Controls.Add(this.panelMain);
+            this.DoubleBuffered = true;
             this.Name = "regis";
             this.Text = "Sign Up";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -62,42 +62,57 @@ namespace US_Bangla_Airline_Management_App
 
         private void AllUsersFormDeleteUserBtn_Click(object sender, EventArgs e)
         {
+            if (AllUsersTable.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user");
+                return;
+            }
 
+            DataGridViewRow row = AllUsersTable.SelectedRows[0];
+            int id = Convert.ToInt32(row.Cells["ID"].Value);
 
-            
-                if (AllUsersTable.SelectedRows.Count == 0)
+            bool isDeletingSelf = LoggedInUser.ID == id;
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this user?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            // ✅ Delete user
+            User.DeleteUser(id);
+            MessageBox.Show("User deleted successfully");
+
+            // 🚨 If admin deleted his own account
+            if (isDeletingSelf)
+            {
+                MessageBox.Show(
+                    "Your account has been deleted. Please sign up again.",
+                    "Session Ended",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                LoggedInUser.Logout();
+
+                // Close all forms
+                foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
                 {
-                    MessageBox.Show("Please select a user");
-                    return;
+                    f.Close();
                 }
 
-                // Get selected row
-                DataGridViewRow row = AllUsersTable.SelectedRows[0];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                // Redirect to Signup
+                new regis().Show();
+                return;
+            }
 
-                // Confirmation
-                DialogResult result = MessageBox.Show(
-                    "Are you sure you want to delete this user?",
-                    "Confirm Delete",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    User.DeleteUser(id);
-                    MessageBox.Show("User deleted successfully");
-
-                    // Refresh table
-                    LoadAllUsers();
-                }
-            
-
-
-
-
-
-
+            // 🔄 Refresh table for normal delete
+            LoadAllUsers();
         }
+
 
         private void AllUsersBackBtn_Click(object sender, EventArgs e)
         {

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace US_Bangla_Airline_Management_App
@@ -30,7 +25,6 @@ namespace US_Bangla_Airline_Management_App
         {
             int id = userId;
             string username = SingleUserFormUserNameTxtBox.Text.Trim();
-            string password = SingleUserFormPasswordTxtBox.Text;
             string newRole = SingleUserFormRoleCmb.SelectedItem.ToString();
             int status = SingleUserFormStatusCmbBox.SelectedIndex == 0 ? 1 : 0;
 
@@ -46,16 +40,12 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 🔐 If password textbox is empty → keep old password
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                DataRow existingUser = User.GetUserById(id);
-                password = existingUser["Password"].ToString();
-            }
+            // 🔐 Always keep old password (admin never touches it)
+            DataRow existingUser = User.GetUserById(id);
+            string password = existingUser["Password"].ToString();
 
             // 🔍 Check: is admin updating himself?
             bool isUpdatingSelf = LoggedInUser.ID == id;
-
             bool roleChanged =
                 isUpdatingSelf &&
                 !LoggedInUser.Role.Equals(newRole, StringComparison.OrdinalIgnoreCase);
@@ -65,7 +55,7 @@ namespace US_Bangla_Airline_Management_App
 
             MessageBox.Show("User updated successfully");
 
-            // 🚨 If admin changed his own role → force logout
+            // 🚨 Self-role change → force logout
             if (roleChanged)
             {
                 MessageBox.Show(
@@ -77,7 +67,6 @@ namespace US_Bangla_Airline_Management_App
 
                 LoggedInUser.Logout();
 
-                // Close all forms except Login
                 foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
                 {
                     if (!(f is LogInForm))
@@ -91,13 +80,11 @@ namespace US_Bangla_Airline_Management_App
             this.Close();
         }
 
-
         private void SingleUserFormBackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AllUsers a = new AllUsers();
-            a.Show();
-
+            new AllUsers().Show();
         }
     }
 }
+

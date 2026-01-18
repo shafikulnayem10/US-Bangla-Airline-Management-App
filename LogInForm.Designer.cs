@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             this.panelMain = new System.Windows.Forms.Panel();
             this.acc = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@
             this.LogInFormPassTxtBox.Name = "LogInFormPassTxtBox";
             this.LogInFormPassTxtBox.Size = new System.Drawing.Size(340, 32);
             this.LogInFormPassTxtBox.TabIndex = 5;
+            this.LogInFormPassTxtBox.UseSystemPasswordChar = true;
             // 
             // LogInFormPassLabel
             // 
@@ -114,7 +116,6 @@
             this.LogInFormUserNameTextBox.Name = "LogInFormUserNameTextBox";
             this.LogInFormUserNameTextBox.Size = new System.Drawing.Size(340, 32);
             this.LogInFormUserNameTextBox.TabIndex = 3;
-            this.LogInFormUserNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LogInFormUserNameLabel
             // 
@@ -153,9 +154,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1103, 489);
             this.Controls.Add(this.LogInFormPictureBox);
             this.Controls.Add(this.panelMain);
+            this.DoubleBuffered = true;
             this.Name = "LogInForm";
             this.Text = "Log In";
             this.panelMain.ResumeLayout(false);

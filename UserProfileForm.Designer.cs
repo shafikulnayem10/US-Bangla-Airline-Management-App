@@ -18,6 +18,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserProfileForm));
             this.MainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.AdminProfileIDTxtBox = new System.Windows.Forms.TextBox();
@@ -158,13 +159,16 @@
             this.AdminProfileFormBackBtn.UseVisualStyleBackColor = false;
             this.AdminProfileFormBackBtn.Click += new System.EventHandler(this.AdminProfileFormBackBtn_click);
             // 
-            // AdminProfileForm
+            // UserProfileForm
             // 
             this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MainPanel);
-            this.Name = "AdminProfileForm";
-            this.Text = "Admin Profile";
+            this.DoubleBuffered = true;
+            this.Name = "UserProfileForm";
+            this.Text = "User Profile";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);

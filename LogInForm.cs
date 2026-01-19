@@ -80,8 +80,8 @@ namespace US_Bangla_Airline_Management_App
             }
             else if (role == "counterstaff")
             {
-                MessageBox.Show("Counter Staff Dashboard not implemented yet");
-                // new CounterStaffDashboard().Show();
+                
+                new staffdashboard().Show();
             }
             else
             {

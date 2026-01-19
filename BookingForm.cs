@@ -127,7 +127,7 @@ namespace US_Bangla_Airline_Management_App
                 if (totalSeats <= 0)
                 {
                     MessageBox.Show(
-                        "❌ No seats available for this flight.",
+                        " No seats available for this flight.",
                         "Booking Failed",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning
@@ -144,7 +144,7 @@ namespace US_Bangla_Airline_Management_App
                     VALUES
                     (@UserID, @UserName, @FlightID, @Departure, @Destination,
                      @DepartureDate, @ArrivalDate, @SeatNumber,
-                     @FlightStatus, 0, 1)
+                     @FlightStatus, 0, 0)
                 ";
 
                 SqlCommand cmd = new SqlCommand(insertBookingQuery, con);
@@ -161,15 +161,10 @@ namespace US_Bangla_Airline_Management_App
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show(
-                    "✅ Flight booked successfully!",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                
+                this.Hide();
 
-                CustomerDashboard c = new CustomerDashboard();
-                c.Show();
+                new selectpaymethod().Show();
             }
             catch (Exception ex)
             {

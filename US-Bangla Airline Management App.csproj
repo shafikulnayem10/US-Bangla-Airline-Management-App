@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAircraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAircraft.Designer.cs">
+      <DependentUpon>AddAircraft.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddFlightForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,30 @@
     </Compile>
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllAircrafts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllAircrafts.Designer.cs">
+      <DependentUpon>AllAircrafts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllBookingFlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllBookingFlights.Designer.cs">
+      <DependentUpon>AllBookingFlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingList.Designer.cs">
+      <DependentUpon>BookingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleAircraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SingleAircraft.Designer.cs">
+      <DependentUpon>SingleAircraft.cs</DependentUpon>
     </Compile>
     <Compile Include="UserProfileForm.cs">
       <SubType>Form</SubType>
@@ -125,14 +155,29 @@
       <DependentUpon>SingleUser.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddAircraft.resx">
+      <DependentUpon>AddAircraft.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddFlightForm.resx">
       <DependentUpon>AddFlightForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllAircrafts.resx">
+      <DependentUpon>AllAircrafts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllBookingFlights.resx">
+      <DependentUpon>AllBookingFlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingList.resx">
+      <DependentUpon>BookingList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="regis.resx">
       <DependentUpon>regis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SingleAircraft.resx">
+      <DependentUpon>SingleAircraft.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserProfileForm.resx">
       <DependentUpon>UserProfileForm.cs</DependentUpon>

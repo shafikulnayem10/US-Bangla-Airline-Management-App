@@ -20,6 +20,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.Label();
             this.BookingFormUserNameTxtBox = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.textFlightStatus = new System.Windows.Forms.TextBox();
             this.textAircraftNo = new System.Windows.Forms.TextBox();
             this.BookingFormBookFlightBtn = new System.Windows.Forms.Button();
-            this.back = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             this.mainPanel.Controls.Add(this.BookingFormBookFlightBtn);
             this.mainPanel.Location = new System.Drawing.Point(30, 12);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(704, 526);
+            this.mainPanel.Size = new System.Drawing.Size(692, 513);
             this.mainPanel.TabIndex = 0;
             // 
             // label1
@@ -86,6 +86,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Booking Form";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.LightCoral;
+            this.back.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.back.Location = new System.Drawing.Point(456, 440);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(117, 50);
+            this.back.TabIndex = 1;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // name
             // 
@@ -226,7 +238,7 @@
             // 
             this.BookingFormBookFlightBtn.BackColor = System.Drawing.Color.SteelBlue;
             this.BookingFormBookFlightBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BookingFormBookFlightBtn.Location = new System.Drawing.Point(221, 440);
+            this.BookingFormBookFlightBtn.Location = new System.Drawing.Point(180, 440);
             this.BookingFormBookFlightBtn.Name = "BookingFormBookFlightBtn";
             this.BookingFormBookFlightBtn.Size = new System.Drawing.Size(145, 50);
             this.BookingFormBookFlightBtn.TabIndex = 19;
@@ -234,23 +246,11 @@
             this.BookingFormBookFlightBtn.UseVisualStyleBackColor = false;
             this.BookingFormBookFlightBtn.Click += new System.EventHandler(this.BookingFormBookFlightBtn_Click);
             // 
-            // back
-            // 
-            this.back.BackColor = System.Drawing.Color.LightCoral;
-            this.back.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.back.Location = new System.Drawing.Point(529, 440);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(117, 50);
-            this.back.TabIndex = 1;
-            this.back.Text = "Back";
-            this.back.UseVisualStyleBackColor = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
             // BookingForm
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(900, 550);
+            this.ClientSize = new System.Drawing.Size(834, 539);
             this.Controls.Add(this.mainPanel);
             this.Name = "BookingForm";
             this.Text = "Booking Form";

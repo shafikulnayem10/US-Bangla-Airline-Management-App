@@ -118,5 +118,15 @@ namespace US_Bangla_Airline_Management_App
         {
             ProfileNavigator.OpenProfile();
         }
+
+        private void Exitbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void staffdashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

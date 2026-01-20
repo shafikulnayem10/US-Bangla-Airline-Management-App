@@ -35,13 +35,18 @@ namespace US_Bangla_Airline_Management_App
 
         private void visalogobtn_Click(object sender, EventArgs e)
         {
-            //NTG
+            
         }
 
         private void selectmethodFormVISABtn_Click(object sender, EventArgs e)
         {
             this.Hide();
             new visa().Show();
+        }
+
+        private void exitbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

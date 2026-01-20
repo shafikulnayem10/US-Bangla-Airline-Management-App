@@ -36,14 +36,12 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 🔹 Auto-fill from DB
             AddFlightsFormAircraftNoTxtBox.Text =
                 dt.Rows[0]["AircraftNo"].ToString();
 
             AddFlightFormTotalSeatsTxtBox.Text =
                 dt.Rows[0]["Capacity"].ToString();
 
-            // 🔒 Lock fields
             AddFlightsFormAircraftNoTxtBox.ReadOnly = true;
             AddFlightFormTotalSeatsTxtBox.ReadOnly = true;
         }
@@ -65,7 +63,7 @@ namespace US_Bangla_Airline_Management_App
         AddFlightFormDepartureDateTime.Value,
         AddFlightFormArrivalDateTime.Value,
         int.Parse(AddFlightFormTotalSeatsTxtBox.Text),
-        int.Parse(AddFlightsFormAircraftNoTxtBox.Text), // safe now
+        int.Parse(AddFlightsFormAircraftNoTxtBox.Text), 
         AddFlightFormFlightStatusCmbBox.SelectedIndex == 0 ? 1 : 0
     );
 

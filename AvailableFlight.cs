@@ -47,7 +47,7 @@ namespace US_Bangla_Airline_Management_App
 
                 dgvflight.DataSource = dt;
 
-                // UI polish
+                
                 dgvflight.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvflight.ReadOnly = true;
                 dgvflight.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -113,7 +113,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void dgvflight_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Nothing needed here
+            
         }
 
     }

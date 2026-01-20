@@ -13,7 +13,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void AddAircraftFormADDBtn_Click(object sender, EventArgs e)
         {
-            // 1️⃣ Empty check
+           
             if (
                 AddAircraftFormAircraftNoTxtBox.Text == "" ||
                 AddAircraftFormAircraftModelTxtBox.Text == "" ||
@@ -28,7 +28,7 @@ namespace US_Bangla_Airline_Management_App
             int aircraftNo;
             int capacity;
 
-            // 2️⃣ Number validation
+            
             if (
                 !int.TryParse(AddAircraftFormAircraftNoTxtBox.Text, out aircraftNo) ||
                 !int.TryParse(AddAircraftFormCapacityTxtBox.Text, out capacity)
@@ -44,7 +44,7 @@ namespace US_Bangla_Airline_Management_App
                 {
                     con.Open();
 
-                    // 3️⃣ CHECK: AircraftNo already exists?
+                    
                     string checkQuery =
                         "SELECT COUNT(*) FROM AircraftTable WHERE AircraftNo = @AircraftNo";
 
@@ -61,7 +61,7 @@ namespace US_Bangla_Airline_Management_App
                         return;
                     }
 
-                    // 4️⃣ INSERT
+                    
                     string insertQuery = @"
                         INSERT INTO AircraftTable
                         (AircraftNo, AircraftModel, Manufacturer, Capacity)
@@ -86,7 +86,7 @@ namespace US_Bangla_Airline_Management_App
 
                 MessageBox.Show("Aircraft added successfully ✈️");
 
-                // 5️⃣ Back to AllAircrafts
+                
                 this.Hide();
                 AllAircrafts a = new AllAircrafts();
                 a.Show();

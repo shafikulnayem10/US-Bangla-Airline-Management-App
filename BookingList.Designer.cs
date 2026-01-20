@@ -57,7 +57,7 @@
             this.searchbtn.Name = "searchbtn";
             this.searchbtn.Size = new System.Drawing.Size(120, 30);
             this.searchbtn.TabIndex = 1;
-            this.searchbtn.Text = "Search";
+            this.searchbtn.Text = "Search By User Name";
             this.searchbtn.UseVisualStyleBackColor = false;
             this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 

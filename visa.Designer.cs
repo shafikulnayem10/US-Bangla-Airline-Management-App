@@ -29,6 +29,7 @@ namespace US_Bangla_Airline_Management_App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(visa));
             this.cardnmbrtxt = new System.Windows.Forms.Label();
             this.cardnmbrtxtbox = new System.Windows.Forms.TextBox();
             this.holdernametxtbox = new System.Windows.Forms.TextBox();
@@ -162,7 +163,7 @@ namespace US_Bangla_Airline_Management_App
             // 
             this.addcardtxt.AutoSize = true;
             this.addcardtxt.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.addcardtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addcardtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addcardtxt.Location = new System.Drawing.Point(59, 27);
             this.addcardtxt.Name = "addcardtxt";
             this.addcardtxt.Size = new System.Drawing.Size(138, 29);
@@ -172,6 +173,7 @@ namespace US_Bangla_Airline_Management_App
             // paynowbtn
             // 
             this.paynowbtn.BackColor = System.Drawing.Color.GreenYellow;
+            this.paynowbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paynowbtn.Location = new System.Drawing.Point(334, 275);
             this.paynowbtn.Name = "paynowbtn";
             this.paynowbtn.Size = new System.Drawing.Size(95, 43);
@@ -195,6 +197,8 @@ namespace US_Bangla_Airline_Management_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Exitbtn);
             this.Controls.Add(this.paynowbtn);

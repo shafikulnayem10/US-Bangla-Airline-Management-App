@@ -11,7 +11,7 @@ namespace US_Bangla_Airline_Management_App
         {
             InitializeComponent();
 
-            // 🔥 Form খুললেই aircraft list load হবে
+           
             LoadAllAircrafts();
         }
 
@@ -35,7 +35,7 @@ namespace US_Bangla_Airline_Management_App
 
                     AllAircraftsFormDatatable.DataSource = dt;
 
-                    // UI polish (optional but pro)
+                   
                     AllAircraftsFormDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     AllAircraftsFormDatatable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     AllAircraftsFormDatatable.MultiSelect = false;
@@ -116,7 +116,6 @@ namespace US_Bangla_Airline_Management_App
 
                     MessageBox.Show("Aircraft deleted successfully ✈️");
 
-                    // 🔥 Refresh DataGridView
                     LoadAllAircrafts();
                 }
                 catch (Exception ex)

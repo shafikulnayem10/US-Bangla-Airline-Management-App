@@ -6,18 +6,14 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class regis : Form
     {
-        // 🔗 Database connection string
-       /* string connectionString =
-            @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=US-BanglaAirlineDB;Integrated Security=True";
-       */
-
+       
         public regis()
         {
             InitializeComponent();
             LoadRole();
         }
 
-        // 🔹 Load Role into ComboBox
+      
         private void LoadRole()
         {
             RegisFormRoleComBox.Items.Clear();
@@ -26,31 +22,29 @@ namespace US_Bangla_Airline_Management_App
             RegisFormRoleComBox.Items.Add("Staff");
             RegisFormRoleComBox.SelectedIndex = 0;
         }
-        // ===== AUTO-GENERATED EVENT PATCH METHODS =====
-        // These methods exist only to satisfy Designer.cs references
+        
 
         private void FullName_Click(object sender, EventArgs e)
         {
-            // No action needed
+           
         }
 
         private void RegisFormUserNameTxtBox_TextChanged(object sender, EventArgs e)
         {
-            // No action needed
+            
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            // No action needed
+           
         }
-        // ===== QUICK PATCH FOR DESIGNER EVENT =====
+      
 
-       
-        // ===== QUICK PATCH FOR CANCEL BUTTON EVENT =====
+     
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            // No action needed
+            
         }
 
 

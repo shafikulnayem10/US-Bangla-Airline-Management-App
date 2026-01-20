@@ -25,7 +25,7 @@ namespace US_Bangla_Airline_Management_App
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
-            // Check duplicate ID or UserName
+           
             string checkQuery =
                 "SELECT COUNT(*) FROM UserTable WHERE ID=@ID OR UserName=@UserName";
 
@@ -40,7 +40,7 @@ namespace US_Bangla_Airline_Management_App
                 throw new Exception("User ID or Username already exists!");
             }
 
-            //  Insert new user
+            
             string insertQuery =
                 "INSERT INTO UserTable (ID, UserName, Password, Role, Status) " +
                 "VALUES (@ID, @UserName, @Password, @Role, @Status)";
@@ -58,7 +58,7 @@ namespace US_Bangla_Airline_Management_App
 
 
 
-        //  READ
+        
         public static DataRow GetUserByUsername(string username)
         {
             SqlConnection con = DbConfig.GetConnection();
@@ -75,7 +75,7 @@ namespace US_Bangla_Airline_Management_App
             con.Close();
 
             if (dt.Rows.Count > 0)
-                return dt.Rows[0];   // first matching user
+                return dt.Rows[0];   
             else
                 return null;
         }
@@ -125,7 +125,7 @@ namespace US_Bangla_Airline_Management_App
         }
 
    
- //get all users
+
 public static DataTable GetAllUsers()
     {
         SqlConnection con = DbConfig.GetConnection();
@@ -140,7 +140,7 @@ public static DataTable GetAllUsers()
         con.Close();
         return dt;
     }
-        //update user
+       
         public static bool IsUserNameTaken(string username, int currentUserId)
         {
             SqlConnection con = DbConfig.GetConnection();
@@ -182,7 +182,7 @@ public static DataTable GetAllUsers()
         }
 
 
-        //Delete User
+        
         public static void DeleteUser(int id)
         {
             SqlConnection con = DbConfig.GetConnection();

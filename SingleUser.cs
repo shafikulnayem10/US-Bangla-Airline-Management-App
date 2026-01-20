@@ -28,7 +28,7 @@ namespace US_Bangla_Airline_Management_App
             string newRole = SingleUserFormRoleCmb.SelectedItem.ToString();
             int status = SingleUserFormStatusCmbBox.SelectedIndex == 0 ? 1 : 0;
 
-            // 🔁 Duplicate username check
+            
             if (User.IsUserNameTaken(username, id))
             {
                 MessageBox.Show(
@@ -40,22 +40,22 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 🔐 Always keep old password (admin never touches it)
+            
             DataRow existingUser = User.GetUserById(id);
             string password = existingUser["Password"].ToString();
 
-            // 🔍 Check: is admin updating himself?
+           
             bool isUpdatingSelf = LoggedInUser.ID == id;
             bool roleChanged =
                 isUpdatingSelf &&
                 !LoggedInUser.Role.Equals(newRole, StringComparison.OrdinalIgnoreCase);
 
-            // ✅ Update user
+            
             User.UpdateUser(id, username, password, newRole, status);
 
             MessageBox.Show("User updated successfully");
 
-            // 🚨 Self-role change → force logout
+            
             if (roleChanged)
             {
                 MessageBox.Show(

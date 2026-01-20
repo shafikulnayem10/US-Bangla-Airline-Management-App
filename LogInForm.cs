@@ -13,7 +13,7 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class LogInForm : Form
     {
-       // string connectionString =  @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=US-BanglaAirlineDB;Integrated Security=True";
+     
         public LogInForm()
         {
             InitializeComponent();
@@ -26,14 +26,14 @@ namespace US_Bangla_Airline_Management_App
             string username = LogInFormUserNameTextBox.Text.Trim();
             string password = LogInFormPassTxtBox.Text.Trim();
 
-            // 🔴 Empty check
+            
             if (username == "" || password == "")
             {
                 MessageBox.Show("Please enter username and password");
                 return;
             }
 
-            // 🔍 STEP 1: Get user from DB
+         
             DataRow user = User.GetUserByUsername(username);
 
             if (user == null)
@@ -42,7 +42,7 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 🔐 STEP 2: Password & Status validation (SAFE)
+          
             string dbPassword = user["Password"].ToString().Trim();
             int status = Convert.ToInt32(user["Status"]);
 
@@ -58,13 +58,13 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 🧠 STEP 3: Store Logged-in user (SESSION)
+            
             LoggedInUser.ID = Convert.ToInt32(user["ID"]);
             LoggedInUser.UserName = user["UserName"].ToString();
             LoggedInUser.Role = user["Role"].ToString().Trim();
             LoggedInUser.Status = status;
 
-            // 🎯 STEP 4: Role-based navigation
+            
             this.Hide();
 
             string role = LoggedInUser.Role.ToLower();
@@ -78,7 +78,7 @@ namespace US_Bangla_Airline_Management_App
               
                 new CustomerDashboard().Show();
             }
-            else if (role == "counterstaff")
+            else if (role == "counterstaff"||role=="staff")
             {
                 
                 new staffdashboard().Show();

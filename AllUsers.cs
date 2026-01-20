@@ -13,7 +13,7 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class AllUsers : Form
     {
-        //string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=US-BanglaAirlineDB;Integrated Security=True";
+       
         public AllUsers()
         {
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace US_Bangla_Airline_Management_App
                 SingleUser su = new SingleUser(id, username, role, status);
                 su.ShowDialog();
 
-                // 4️⃣ Refresh table after update
+              
                 LoadAllUsers();
             
 
@@ -82,11 +82,10 @@ namespace US_Bangla_Airline_Management_App
             if (result != DialogResult.Yes)
                 return;
 
-            // ✅ Delete user
             User.DeleteUser(id);
             MessageBox.Show("User deleted successfully");
 
-            // 🚨 If admin deleted his own account
+            
             if (isDeletingSelf)
             {
                 MessageBox.Show(
@@ -98,18 +97,18 @@ namespace US_Bangla_Airline_Management_App
 
                 LoggedInUser.Logout();
 
-                // Close all forms
+               
                 foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
                 {
                     f.Close();
                 }
 
-                // Redirect to Signup
+            
                 new regis().Show();
                 return;
             }
 
-            // 🔄 Refresh table for normal delete
+           
             LoadAllUsers();
         }
 

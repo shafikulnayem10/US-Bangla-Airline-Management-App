@@ -11,9 +11,7 @@ namespace US_Bangla_Airline_Management_App
             InitializeComponent();
         }
 
-        // =============================
-        // CVV VALIDATION
-        // =============================
+       
         private void cvvtextBox_TextChanged(object sender, EventArgs e)
         {
             if (cvvtextBox.Text.Length == 0) return;
@@ -34,9 +32,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // CARD HOLDER NAME VALIDATION
-        // =============================
+       
         private void holdernametxtbox_TextChanged(object sender, EventArgs e)
         {
             if (holdernametxtbox.Text.Length == 0) return;
@@ -53,9 +49,6 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // CARD NUMBER VALIDATION
-        // =============================
         private void cardnmbrtxtbox_TextChanged(object sender, EventArgs e)
         {
             if (cardnmbrtxtbox.Text.Length == 0) return;
@@ -76,9 +69,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // STORE CARD NUMBER
-        // =============================
+        
         public static void CardNumberStore(string cardNumber)
         {
             using (SqlConnection con = DbConfig.GetConnection())
@@ -94,9 +85,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // UPDATE PAYMENT + BOOKING STATUS
-        // =============================
+        
         public static void UpdatePaymentAndBookingStatus()
         {
             using (SqlConnection con = DbConfig.GetConnection())
@@ -121,9 +110,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // PAY NOW BUTTON
-        // =============================
+        
         private void paynowbtn_Click(object sender, EventArgs e)
         {
             if (cardnmbrtxtbox.Text.Length != 12)
@@ -144,14 +131,14 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 1️⃣ Store card number
+            
             CardNumberStore(cardnmbrtxtbox.Text);
 
-            // 2️⃣ Confirm booking + payment
+            
             UpdatePaymentAndBookingStatus();
 
             MessageBox.Show(
-                "Payment Successful!\nBooking Confirmed 🎉",
+                "Payment Successful!\nBooking Confirmed ",
                 "Success",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
@@ -165,20 +152,16 @@ namespace US_Bangla_Airline_Management_App
         {
             this.Close();
         }
-        // =============================
-        // FORM LOAD (required by Designer)
-        // =============================
+        
         private void visa_Load(object sender, EventArgs e)
         {
-            // nothing needed now
+            
         }
 
-        // =============================
-        // COMBOBOX EVENT (required by Designer)
-        // =============================
+       
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // nothing needed now
+            
         }
 
     }

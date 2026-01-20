@@ -28,7 +28,7 @@ namespace US_Bangla_Airline_Management_App
 
             this.flightId = flightId;
 
-            // Auto load flight info
+            
             txtDeparture.Text = departure;
             textDestination.Text = destination;
             textDepartureDate.Text = departureDateTime;
@@ -36,7 +36,7 @@ namespace US_Bangla_Airline_Management_App
             textAircraftNo.Text = aircraftNo;
             textFlightStatus.Text = flightStatus;
 
-            // Read-only flight info
+           
             txtDeparture.ReadOnly = true;
             textDestination.ReadOnly = true;
             textDepartureDate.ReadOnly = true;
@@ -44,32 +44,30 @@ namespace US_Bangla_Airline_Management_App
             textAircraftNo.ReadOnly = true;
             textFlightStatus.ReadOnly = true;
 
-            // Auto load username
+         
             BookingFormUNTxtBox.Text = LoggedInUser.UserName;
             BookingFormUNTxtBox.ReadOnly = true;
 
-            // Seat auto-generated later
+           
             BookingFormSeatNumberTxtBox.ReadOnly = true;
         }
 
-        // ================= DESIGNER-SAFE EMPTY METHODS =================
+    
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // intentionally left blank
+           
         }
 
         private void txtDeparture_TextChanged(object sender, EventArgs e)
         {
-            // Designer happy, logic not needed
+            
         }
 
         private void BookingForm_Load(object sender, EventArgs e)
         {
             LoadAutoSeatNumber();
         }
-        // ================================================================
-
-        // 🔢 AUTO SEAT NUMBER GENERATOR
+       
         private void LoadAutoSeatNumber()
         {
             SqlConnection con = DbConfig.GetConnection();
@@ -102,7 +100,6 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // ✅ BOOK FLIGHT WITH CHECK SEAT AVAILABILITY
         private void BookingFormBookFlightBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(BookingFormUNTxtBox.Text))
@@ -117,7 +114,7 @@ namespace US_Bangla_Airline_Management_App
             {
                 con.Open();
 
-                // 1️⃣ CHECK SEAT AVAILABILITY
+                
                 string seatCheckQuery = "SELECT TotalSeats FROM FlightTable WHERE FlightID = @FlightID";
                 SqlCommand seatCmd = new SqlCommand(seatCheckQuery, con);
                 seatCmd.Parameters.AddWithValue("@FlightID", flightId);
@@ -135,7 +132,7 @@ namespace US_Bangla_Airline_Management_App
                     return;
                 }
 
-                // 2️⃣ INSERT BOOKING
+              
                 string insertBookingQuery = @"
                     INSERT INTO BookingFlightsTable
                     (UserID, UserName, FlightID, Departure, Destination,

@@ -51,9 +51,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // STORE BKASH NUMBER
-        // =============================
+       
         public static void BkashNumberStore(string phone)
         {
             using (SqlConnection con = DbConfig.GetConnection())
@@ -67,9 +65,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // UPDATE PAYMENT + BOOKING STATUS
-        // =============================
+        
         public static void UpdatePaymentAndBookingStatus()
         {
             using (SqlConnection con = DbConfig.GetConnection())
@@ -94,9 +90,7 @@ namespace US_Bangla_Airline_Management_App
             }
         }
 
-        // =============================
-        // PROCEED PAYMENT
-        // =============================
+        
         private void proceedbtn_Click(object sender, EventArgs e)
         {
             if (numbertxtbox.Text.Length != 11)
@@ -111,10 +105,10 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // 1️⃣ Store phone number
+            
             BkashNumberStore(numbertxtbox.Text);
 
-            // 2️⃣ Update payment + booking status
+            
             UpdatePaymentAndBookingStatus();
 
             MessageBox.Show(

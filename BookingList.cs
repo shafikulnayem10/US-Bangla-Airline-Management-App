@@ -52,7 +52,7 @@ namespace US_Bangla_Airline_Management_App
         private void bookinglistGridView_CellContentClick(
             object sender, DataGridViewCellEventArgs e)
         {
-            // optional
+            
         }
 
         private void searchtextBox_TextChanged(object sender, EventArgs e)
@@ -69,7 +69,6 @@ namespace US_Bangla_Airline_Management_App
 
         private void BookingList_Load(object sender, EventArgs e)
         {
-            // optional
         }
 
         private void BookingListFormBackBtn_Click(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // selected row থেকে BookingID নেওয়া
+           
             DataGridViewRow row = bookinglistGridView.SelectedRows[0];
             int bookingId = Convert.ToInt32(row.Cells["BookingID"].Value);
 
@@ -120,7 +119,6 @@ namespace US_Bangla_Airline_Management_App
 
                 MessageBox.Show("Booking deleted successfully");
 
-                // 🔄 Grid refresh
                 ShowAllBooking();
             }
             catch (Exception ex)

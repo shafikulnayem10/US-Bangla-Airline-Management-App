@@ -35,7 +35,7 @@ namespace US_Bangla_Airline_Management_App
             AdminProfileIDTxtBox.ReadOnly = true;
             AdminProfileUserNameTxtBox.ReadOnly = true;
 
-            //  STORE OLD ROLE
+            
             oldRole = user["Role"].ToString().Trim();
         }
 
@@ -99,7 +99,7 @@ namespace US_Bangla_Airline_Management_App
             }
             else if (role == "staff")
             {
-               // new StaffDashboard().Show();
+              
             }
             else
             {

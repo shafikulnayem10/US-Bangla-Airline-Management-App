@@ -40,7 +40,7 @@ namespace US_Bangla_Airline_Management_App
             SingleFlightFormStatusCmbBox.SelectedIndex =
                 status == 1 ? 0 : 1;
 
-            // 🔒 READ ONLY fields
+          
             SingleFlightFormFlightIDTxtBox.ReadOnly = true;
             SingleFlightFormAircraftNoTxtBox.ReadOnly = true;
             SingleFlightFormTotalSeatsTxtBox.ReadOnly = true;

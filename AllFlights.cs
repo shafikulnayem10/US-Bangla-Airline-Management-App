@@ -98,7 +98,7 @@ namespace US_Bangla_Airline_Management_App
 
             frm.ShowDialog();
 
-            // update এর পরে grid refresh
+          
             AllFlightsFormFlightDataTable.DataSource = Flight.GetAllFlights();
 
 

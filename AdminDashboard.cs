@@ -57,15 +57,8 @@ namespace US_Bangla_Airline_Management_App
             AF.Show();
 
         }
-/*
-        private void AdminDashboardBackBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LogInForm LF = new LogInForm();
-            LF.Show();
 
-        }
-*/
+
 
         private void AdminDashboardProfilebtn(object sender, EventArgs e)
         {
@@ -91,10 +84,9 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardUserList = new System.Windows.Forms.Button();
             this.AdminDashBoardTitleLabel = new System.Windows.Forms.Label();
             this.AdminDashBoardAircarftListBtn = new System.Windows.Forms.Button();
+            this.staffbookingbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // AdminDashboardFlightListBtn
-            // 
+            
             this.AdminDashboardFlightListBtn.BackColor = System.Drawing.Color.Linen;
             this.AdminDashboardFlightListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardFlightListBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -106,9 +98,8 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardFlightListBtn.Text = "Flight List";
             this.AdminDashboardFlightListBtn.UseVisualStyleBackColor = false;
             this.AdminDashboardFlightListBtn.Click += new System.EventHandler(this.AdminDashboardFlightListBtn_Click);
-            // 
-            // AdminDashBoardFlightBookingListBtn
-            // 
+          
+            
             this.AdminDashBoardFlightBookingListBtn.BackColor = System.Drawing.Color.DarkSlateGray;
             this.AdminDashBoardFlightBookingListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashBoardFlightBookingListBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -120,9 +111,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardFlightBookingListBtn.Text = "Booking Flights List";
             this.AdminDashBoardFlightBookingListBtn.UseVisualStyleBackColor = false;
             this.AdminDashBoardFlightBookingListBtn.Click += new System.EventHandler(this.AdminDashBoardFlightBookingListBtn_Click);
-            // 
-            // AdminDashboardProfileBtn
-            // 
+            
             this.AdminDashboardProfileBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.AdminDashboardProfileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardProfileBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -134,23 +123,19 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashboardProfileBtn.Text = " Profile";
             this.AdminDashboardProfileBtn.UseVisualStyleBackColor = false;
             this.AdminDashboardProfileBtn.Click += new System.EventHandler(this.AdminDashboardProfilebtn);
-            // 
-            // AdminDashboardLogOutBtn
-            // 
+          
             this.AdminDashboardLogOutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.AdminDashboardLogOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashboardLogOutBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.AdminDashboardLogOutBtn.ForeColor = System.Drawing.Color.White;
-            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(270, 359);
+            this.AdminDashboardLogOutBtn.Location = new System.Drawing.Point(654, 376);
             this.AdminDashboardLogOutBtn.Name = "AdminDashboardLogOutBtn";
-            this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(262, 49);
+            this.AdminDashboardLogOutBtn.Size = new System.Drawing.Size(106, 41);
             this.AdminDashboardLogOutBtn.TabIndex = 3;
             this.AdminDashboardLogOutBtn.Text = " Log Out";
             this.AdminDashboardLogOutBtn.UseVisualStyleBackColor = false;
             this.AdminDashboardLogOutBtn.Click += new System.EventHandler(this.AdminDashboardLogOutBtn_Click);
-            // 
-            // AdminDashBoardUserList
-            // 
+            
             this.AdminDashBoardUserList.BackColor = System.Drawing.Color.SteelBlue;
             this.AdminDashBoardUserList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashBoardUserList.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -162,9 +147,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardUserList.Text = "User List";
             this.AdminDashBoardUserList.UseVisualStyleBackColor = false;
             this.AdminDashBoardUserList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UserListAction);
-            // 
-            // AdminDashBoardTitleLabel
-            // 
+            
             this.AdminDashBoardTitleLabel.AutoSize = true;
             this.AdminDashBoardTitleLabel.BackColor = System.Drawing.Color.Blue;
             this.AdminDashBoardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
@@ -174,9 +157,7 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardTitleLabel.Size = new System.Drawing.Size(273, 41);
             this.AdminDashBoardTitleLabel.TabIndex = 1;
             this.AdminDashBoardTitleLabel.Text = "Admin Dashboard";
-            // 
-            // AdminDashBoardAircarftListBtn
-            // 
+            
             this.AdminDashBoardAircarftListBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.AdminDashBoardAircarftListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminDashBoardAircarftListBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -188,15 +169,26 @@ namespace US_Bangla_Airline_Management_App
             this.AdminDashBoardAircarftListBtn.Text = "Aircraft List";
             this.AdminDashBoardAircarftListBtn.UseVisualStyleBackColor = false;
             this.AdminDashBoardAircarftListBtn.Click += new System.EventHandler(this.AdminDashBoardAircarftListBtn_Click);
-            // 
-            // AdminDashboard
-            // 
+           
+            this.staffbookingbutton.BackColor = System.Drawing.Color.MidnightBlue;
+            this.staffbookingbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.staffbookingbutton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.staffbookingbutton.ForeColor = System.Drawing.Color.Transparent;
+            this.staffbookingbutton.Location = new System.Drawing.Point(47, 331);
+            this.staffbookingbutton.Name = "staffbookingbutton";
+            this.staffbookingbutton.Size = new System.Drawing.Size(340, 86);
+            this.staffbookingbutton.TabIndex = 7;
+            this.staffbookingbutton.Text = "Staff Booking List";
+            this.staffbookingbutton.UseVisualStyleBackColor = false;
+            this.staffbookingbutton.Click += new System.EventHandler(this.staffbookingbutton_Click);
+           
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.staffbookingbutton);
             this.Controls.Add(this.AdminDashBoardAircarftListBtn);
             this.Controls.Add(this.AdminDashBoardTitleLabel);
             this.Controls.Add(this.AdminDashBoardUserList);
@@ -220,6 +212,15 @@ namespace US_Bangla_Airline_Management_App
             BookingList b = new BookingList();
             b.Show();
 
+        }
+
+        private Button staffbookingbutton;
+
+        private void staffbookingbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            staffbookinglist sf = new staffbookinglist();
+            sf.Show();
         }
     }
 }

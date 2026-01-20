@@ -29,12 +29,8 @@ namespace US_Bangla_Airline_Management_App
             {
                 con.Open();
 
-                string query = @"
-                    SELECT FlightID, Departure, Destination, DepartureDate, ArrivalDate, SeatNumber, FlightStatus
-                    FROM BookingFlightsTable
-                    WHERE UserID = @UserID
-                    ORDER BY DepartureDate DESC
-                ";
+                string query = @" SELECT BookingID, FlightID, Departure, Destination, DepartureDate, ArrivalDate, SeatNumber, FlightStatus FROM BookingFlightsTable WHERE UserID = @UserID  ORDER BY DepartureDate DESC   ";
+
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@UserID", LoggedInUser.ID);
@@ -45,7 +41,7 @@ namespace US_Bangla_Airline_Management_App
 
                 CustomerBookingHistoryGridView.DataSource = dt;
 
-                // Optional: style the DataGridView
+                
                 CustomerBookingHistoryGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 CustomerBookingHistoryGridView.ReadOnly = true;
                 CustomerBookingHistoryGridView.AllowUserToAddRows = false;
@@ -94,10 +90,11 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-            // Get FlightID of the selected row
-            int flightId = Convert.ToInt32(CustomerBookingHistoryGridView.SelectedRows[0].Cells["FlightID"].Value);
 
-            // Confirm cancellation
+            int bookingId = Convert.ToInt32( CustomerBookingHistoryGridView.SelectedRows[0].Cells["BookingID"].Value);
+
+
+
             var confirmResult = MessageBox.Show(
                 "Are you sure you want to cancel this booking?",
                 "Confirm Cancel",
@@ -113,21 +110,20 @@ namespace US_Bangla_Airline_Management_App
                 {
                     con.Open();
 
-                    string deleteQuery = @"
-                DELETE FROM BookingFlightsTable
-                WHERE UserID = @UserID AND FlightID = @FlightID
-            ";
+                    string deleteQuery = @" DELETE FROM BookingFlightsTable WHERE BookingID = @BookingID AND UserID = @UserID";
+
 
                     SqlCommand cmd = new SqlCommand(deleteQuery, con);
+                    cmd.Parameters.AddWithValue("@BookingID", bookingId);
                     cmd.Parameters.AddWithValue("@UserID", LoggedInUser.ID);
-                    cmd.Parameters.AddWithValue("@FlightID", flightId);
+
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("✅ Booking cancelled successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadBookingHistory(); // Refresh DataGridView
+                        LoadBookingHistory(); 
                     }
                     else
                     {

@@ -15,38 +15,7 @@ namespace US_Bangla_Airline_Management_App
         public int AircraftNo { get; set; }
         public int FlightStatus { get; set; }
 
-        // 🔹 CREATE
-        /*
-        private static bool IsAircraftAlreadyAssigned(int aircraftNo, int? flightId = null)
-        {
-            SqlConnection con = DbConfig.GetConnection();
-            con.Open();
-
-            string query;
-
-            if (flightId == null)
-            {
-                // ADD case
-                query = "SELECT COUNT(*) FROM FlightTable WHERE AircraftNo=@AircraftNo";
-            }
-            else
-            {
-                // UPDATE case (exclude current flight)
-                query = "SELECT COUNT(*) FROM FlightTable WHERE AircraftNo=@AircraftNo AND FlightID<>@FlightID";
-            }
-
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@AircraftNo", aircraftNo);
-
-            if (flightId != null)
-                cmd.Parameters.AddWithValue("@FlightID", flightId);
-
-            int count = (int)cmd.ExecuteScalar();
-            con.Close();
-
-            return count > 0;
-        }
-        */
+       
         public static int? GetAvailableAircraftNo()
         {
             SqlConnection con = DbConfig.GetConnection();
@@ -88,35 +57,10 @@ namespace US_Bangla_Airline_Management_App
         }
 
 
-        /*
-        public static bool IsFlightIdExists(int flightId)
-        {
-            SqlConnection con = DbConfig.GetConnection();
-            con.Open();
-
-            string query = "SELECT COUNT(*) FROM FlightTable WHERE FlightID=@ID";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@ID", flightId);
-
-            int count = (int)cmd.ExecuteScalar();
-            con.Close();
-
-            return count > 0;
-        }
-        */
         public static void AddFlight(string departure, string destination,
             DateTime depTime, DateTime arrTime,
             int totalSeats, int aircraftNo, int status)
         {
-            // 🔒 FlightID check
-          /*  if (IsFlightIdExists(flightId))
-                throw new Exception("Flight ID already exists!");
-          */
-
-            // 🔒 Aircraft check (আগে যেটা করেছিলাম)
-         /*   if (IsAircraftAlreadyAssigned(aircraftNo))
-                throw new Exception("This aircraft is already assigned to another flight.");
-         */
 
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
@@ -127,7 +71,7 @@ namespace US_Bangla_Airline_Management_App
                 "VALUES (@Departure,@Destination,@Dep,@Arr,@Seats,@Aircraft,@Status)";
 
             SqlCommand cmd = new SqlCommand(query, con);
-           // cmd.Parameters.AddWithValue("@ID", flightId);
+           
             cmd.Parameters.AddWithValue("@Departure", departure);
             cmd.Parameters.AddWithValue("@Destination", destination);
             cmd.Parameters.AddWithValue("@Dep", depTime);
@@ -141,7 +85,7 @@ namespace US_Bangla_Airline_Management_App
         }
 
 
-        // 🔹 READ (ALL)
+       
         public static DataTable GetAllFlights()
         {
             SqlConnection con = DbConfig.GetConnection();
@@ -156,7 +100,7 @@ namespace US_Bangla_Airline_Management_App
             return dt;
         }
 
-        // 🔹 UPDATE
+      
         public static void UpdateFlight(int id, string departure, string destination,
             DateTime depTime, DateTime arrTime,
             int totalSeats, int aircraftNo, int status)
@@ -185,7 +129,7 @@ namespace US_Bangla_Airline_Management_App
             con.Close();
         }
 
-        // 🔹 DELETE
+      
         public static void DeleteFlight(int flightId)
         {
             SqlConnection con = DbConfig.GetConnection();

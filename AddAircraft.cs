@@ -103,5 +103,30 @@ namespace US_Bangla_Airline_Management_App
             AllAircrafts a = new AllAircrafts();
             a.Show();
         }
+
+        private void AddAircraftFormAircraftModelTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAircraftFormManufacturerTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAircraftFormCapacityTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAircraftFormAircraftNoTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAircraft_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

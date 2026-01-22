@@ -26,7 +26,7 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormIDLabel = new System.Windows.Forms.Label();
             this.RegisFormPasswordLabel = new System.Windows.Forms.Label();
             this.RegisFormRoleLabel = new System.Windows.Forms.Label();
-            this.RegisFormNamexTxtBox = new System.Windows.Forms.TextBox();
+            this.RegisFormFullNameTxtBox = new System.Windows.Forms.TextBox();
             this.RegisFormUserNameTxtBox = new System.Windows.Forms.TextBox();
             this.RegisFormIDTxtForm = new System.Windows.Forms.TextBox();
             this.RegisFormPasswordTxtBox = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@ namespace US_Bangla_Airline_Management_App
             this.panelMain.Controls.Add(this.RegisFormIDLabel);
             this.panelMain.Controls.Add(this.RegisFormPasswordLabel);
             this.panelMain.Controls.Add(this.RegisFormRoleLabel);
-            this.panelMain.Controls.Add(this.RegisFormNamexTxtBox);
+            this.panelMain.Controls.Add(this.RegisFormFullNameTxtBox);
             this.panelMain.Controls.Add(this.RegisFormUserNameTxtBox);
             this.panelMain.Controls.Add(this.RegisFormIDTxtForm);
             this.panelMain.Controls.Add(this.RegisFormPasswordTxtBox);
@@ -121,13 +121,13 @@ namespace US_Bangla_Airline_Management_App
             this.RegisFormRoleLabel.TabIndex = 15;
             this.RegisFormRoleLabel.Text = "Role";
             // 
-            // RegisFormNamexTxtBox
+            // RegisFormFullNameTxtBox
             // 
-            this.RegisFormNamexTxtBox.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.RegisFormNamexTxtBox.Location = new System.Drawing.Point(200, 88);
-            this.RegisFormNamexTxtBox.Name = "RegisFormNamexTxtBox";
-            this.RegisFormNamexTxtBox.Size = new System.Drawing.Size(260, 32);
-            this.RegisFormNamexTxtBox.TabIndex = 17;
+            this.RegisFormFullNameTxtBox.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.RegisFormFullNameTxtBox.Location = new System.Drawing.Point(200, 88);
+            this.RegisFormFullNameTxtBox.Name = "RegisFormFullNameTxtBox";
+            this.RegisFormFullNameTxtBox.Size = new System.Drawing.Size(260, 32);
+            this.RegisFormFullNameTxtBox.TabIndex = 17;
             // 
             // RegisFormUserNameTxtBox
             // 
@@ -259,7 +259,7 @@ namespace US_Bangla_Airline_Management_App
         private System.Windows.Forms.Label RegisFormIDLabel;
         private System.Windows.Forms.Label RegisFormPasswordLabel;
         private System.Windows.Forms.Label RegisFormRoleLabel;
-        private System.Windows.Forms.TextBox RegisFormNamexTxtBox;
+        private System.Windows.Forms.TextBox RegisFormFullNameTxtBox;
         private System.Windows.Forms.TextBox RegisFormUserNameTxtBox;
         private System.Windows.Forms.TextBox RegisFormIDTxtForm;
         private System.Windows.Forms.TextBox RegisFormPasswordTxtBox;

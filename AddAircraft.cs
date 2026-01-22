@@ -56,7 +56,7 @@ namespace US_Bangla_Airline_Management_App
                     if (exists > 0)
                     {
                         MessageBox.Show(
-                            "Aircraft No already exists ❌\nPlease use a different Aircraft No."
+                            "Aircraft No already exists \nPlease use a different Aircraft No."
                         );
                         return;
                     }
@@ -84,7 +84,7 @@ namespace US_Bangla_Airline_Management_App
                     insertCmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Aircraft added successfully ✈️");
+                MessageBox.Show("Aircraft added ");
 
                 
                 this.Hide();

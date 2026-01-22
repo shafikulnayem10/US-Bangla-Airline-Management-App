@@ -15,10 +15,11 @@ namespace US_Bangla_Airline_Management_App
         public AllFlights()
         {
             InitializeComponent();
-            this.Load += AllFlights_Load;
+            LoadAllFlights();
+          
         }
-
-        private void AllFlights_Load(object sender, EventArgs e)
+       
+        private void LoadAllFlights()
         {
             AllFlightsFormFlightDataTable.DataSource = Flight.GetAllFlights();
         }
@@ -32,23 +33,11 @@ namespace US_Bangla_Airline_Management_App
 
         private void AllFlightsFormDeleteBtn_Click(object sender, EventArgs e)
         {
-            
-                if (AllFlightsFormFlightDataTable.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Please select a flight first.");
-                    return;
-                }
 
-                int flightId = Convert.ToInt32(
-                    AllFlightsFormFlightDataTable.SelectedRows[0].Cells["FlightId"].Value
-                );
+            DataGridViewRow row = AllFlightsFormFlightDataTable.SelectedRows[0];
+            int flightId = Convert.ToInt32(  row.Cells["FlightId"].Value  );
 
-                var confirm = MessageBox.Show(
-                    "Are you sure you want to delete this flight?",
-                    "Confirm",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                var confirm = MessageBox.Show( "Are you sure you want to delete this flight?", "Confirm", MessageBoxButtons.YesNo );
 
                 if (confirm == DialogResult.Yes)
                 {
@@ -64,16 +53,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void AllFlightsFormEditFlightBtn_Click(object sender, EventArgs e)
         {
-            if (AllFlightsFormFlightDataTable.SelectedRows.Count == 0)
-            {
-                MessageBox.Show(
-                    "Please select a flight to edit",
-                    "No Selection",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-                return;
-            }
+            
             DataGridViewRow row = AllFlightsFormFlightDataTable.SelectedRows[0];
 
             int flightId = Convert.ToInt32(row.Cells["FlightID"].Value);
@@ -85,21 +65,12 @@ namespace US_Bangla_Airline_Management_App
             int aircraftNo = Convert.ToInt32(row.Cells["AircraftNo"].Value);
             int status = Convert.ToInt32(row.Cells["FlightStatus"].Value);
 
-            SingleFlightForm frm = new SingleFlightForm(
-    flightId,
-    departure,
-    destination,
-    depTime,
-    arrTime,
-    totalSeats,
-    aircraftNo,
-    status
-);
+            SingleFlightForm frm = new SingleFlightForm(  flightId,  departure,  destination,  depTime,  arrTime, totalSeats,  aircraftNo,  status);
 
             frm.ShowDialog();
 
           
-            AllFlightsFormFlightDataTable.DataSource = Flight.GetAllFlights();
+           AllFlightsFormFlightDataTable.DataSource = Flight.GetAllFlights();
 
 
         }

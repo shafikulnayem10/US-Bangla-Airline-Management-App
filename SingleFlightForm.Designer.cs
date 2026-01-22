@@ -83,6 +83,7 @@
             this.SingleFlightFormFlightIDTxtBox.BackColor = System.Drawing.Color.White;
             this.SingleFlightFormFlightIDTxtBox.Location = new System.Drawing.Point(200, 30);
             this.SingleFlightFormFlightIDTxtBox.Name = "SingleFlightFormFlightIDTxtBox";
+            this.SingleFlightFormFlightIDTxtBox.ReadOnly = true;
             this.SingleFlightFormFlightIDTxtBox.Size = new System.Drawing.Size(160, 22);
             this.SingleFlightFormFlightIDTxtBox.TabIndex = 1;
             // 
@@ -173,6 +174,7 @@
             // 
             this.SingleFlightFormTotalSeatsTxtBox.Location = new System.Drawing.Point(200, 230);
             this.SingleFlightFormTotalSeatsTxtBox.Name = "SingleFlightFormTotalSeatsTxtBox";
+            this.SingleFlightFormTotalSeatsTxtBox.ReadOnly = true;
             this.SingleFlightFormTotalSeatsTxtBox.Size = new System.Drawing.Size(120, 22);
             this.SingleFlightFormTotalSeatsTxtBox.TabIndex = 11;
             // 
@@ -191,6 +193,7 @@
             // 
             this.SingleFlightFormAircraftNoTxtBox.Location = new System.Drawing.Point(200, 270);
             this.SingleFlightFormAircraftNoTxtBox.Name = "SingleFlightFormAircraftNoTxtBox";
+            this.SingleFlightFormAircraftNoTxtBox.ReadOnly = true;
             this.SingleFlightFormAircraftNoTxtBox.Size = new System.Drawing.Size(120, 22);
             this.SingleFlightFormAircraftNoTxtBox.TabIndex = 13;
             // 
@@ -226,7 +229,7 @@
             this.SingleFlightFormUpdateBtn.TabIndex = 16;
             this.SingleFlightFormUpdateBtn.Text = "Update";
             this.SingleFlightFormUpdateBtn.UseVisualStyleBackColor = false;
-            this.SingleFlightFormUpdateBtn.Click += new System.EventHandler(this.SingleFlightFormUpdateBtn_Click_1);
+            this.SingleFlightFormUpdateBtn.Click += new System.EventHandler(this.SingleFlightFormUpdateBtn_Click);
             // 
             // SingleFlightFormBackBtn
             // 

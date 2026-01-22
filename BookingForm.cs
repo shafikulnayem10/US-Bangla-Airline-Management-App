@@ -37,19 +37,13 @@ namespace US_Bangla_Airline_Management_App
             textFlightStatus.Text = flightStatus;
 
            
-            txtDeparture.ReadOnly = true;
-            textDestination.ReadOnly = true;
-            textDepartureDate.ReadOnly = true;
-            textArrivalDate.ReadOnly = true;
-            textAircraftNo.ReadOnly = true;
-            textFlightStatus.ReadOnly = true;
-
+           
          
             BookingFormUNTxtBox.Text = LoggedInUser.UserName;
-            BookingFormUNTxtBox.ReadOnly = true;
+          
 
            
-            BookingFormSeatNumberTxtBox.ReadOnly = true;
+            
         }
 
     
@@ -102,7 +96,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void BookingFormBookFlightBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(BookingFormUNTxtBox.Text))
+            if (BookingFormUNTxtBox.Text == " ")
             {
                 MessageBox.Show("Please enter NID.");
                 return;
@@ -124,25 +118,15 @@ namespace US_Bangla_Airline_Management_App
                 if (totalSeats <= 0)
                 {
                     MessageBox.Show(
-                        " No seats available for this flight.",
-                        "Booking Failed",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
+                        " No seats available for this flight." );
                     return;
                 }
 
               
-                string insertBookingQuery = @"
-                    INSERT INTO BookingFlightsTable
-                    (UserID, UserName, FlightID, Departure, Destination,
-                     DepartureDate, ArrivalDate, SeatNumber,
-                     FlightStatus, PaymentStatus, BookingStatus)
-                    VALUES
-                    (@UserID, @UserName, @FlightID, @Departure, @Destination,
-                     @DepartureDate, @ArrivalDate, @SeatNumber,
-                     @FlightStatus, 0, 0)
-                ";
+                string insertBookingQuery = 
+                   " INSERT INTO BookingFlightsTable"+
+                   " (UserID, UserName, FlightID, Departure, Destination,DepartureDate, ArrivalDate, SeatNumber,FlightStatus, PaymentStatus, BookingStatus)"+
+                   " VALUES(@UserID, @UserName, @FlightID, @Departure, @Destination, @DepartureDate, @ArrivalDate, @SeatNumber, @FlightStatus, 0, 0)" ;
 
                 SqlCommand cmd = new SqlCommand(insertBookingQuery, con);
 

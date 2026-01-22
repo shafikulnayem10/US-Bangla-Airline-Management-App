@@ -70,12 +70,6 @@
     <Compile Include="AllAircrafts.Designer.cs">
       <DependentUpon>AllAircrafts.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllBookingFlights.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AllBookingFlights.Designer.cs">
-      <DependentUpon>AllBookingFlights.cs</DependentUpon>
-    </Compile>
     <Compile Include="bkashpage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,9 +196,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllAircrafts.resx">
       <DependentUpon>AllAircrafts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AllBookingFlights.resx">
-      <DependentUpon>AllBookingFlights.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bkashpage.resx">
       <DependentUpon>bkashpage.cs</DependentUpon>

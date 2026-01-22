@@ -29,7 +29,7 @@ namespace US_Bangla_Airline_Management_App
             
             if (username == "" || password == "")
             {
-                MessageBox.Show("Please enter username and password");
+                MessageBox.Show("Please enter username and  password");
                 return;
             }
 
@@ -42,15 +42,17 @@ namespace US_Bangla_Airline_Management_App
                 return;
             }
 
-          
-            string dbPassword = user["Password"].ToString().Trim();
-            int status = Convert.ToInt32(user["Status"]);
 
-            if (dbPassword != password)
+            string dbPassword = user["Password"].ToString().Trim();
+            
+
+            if (!dbPassword.Equals(password))
             {
                 MessageBox.Show("Username or Password incorrect");
                 return;
             }
+
+            int status = Convert.ToInt32(user["Status"]);
 
             if (status != 1)
             {
@@ -67,7 +69,9 @@ namespace US_Bangla_Airline_Management_App
             
             this.Hide();
 
-            string role = LoggedInUser.Role.ToLower();
+            string role = LoggedInUser.Role.Replace(" ", "").ToLower();
+      
+
 
             if (role == "admin")
             {

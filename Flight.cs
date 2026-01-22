@@ -15,46 +15,24 @@ namespace US_Bangla_Airline_Management_App
         public int AircraftNo { get; set; }
         public int FlightStatus { get; set; }
 
-       
-        public static int? GetAvailableAircraftNo()
-        {
-            SqlConnection con = DbConfig.GetConnection();
-            con.Open();
-
-            string query =
-                "SELECT TOP 1 a.AircraftNo " +
-                "FROM AircraftTable a " +
-                "WHERE a.AircraftNo NOT IN " +
-                "(SELECT AircraftNo FROM FlightTable)";
-
-            SqlCommand cmd = new SqlCommand(query, con);
-            object result = cmd.ExecuteScalar();
-            con.Close();
-
-            if (result == null)
-                return null;
-
-            return Convert.ToInt32(result);
-        }
+     
         public static DataTable GetAvailableAircraft()
         {
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
-            string query = @"
-        SELECT TOP 1 AircraftNo, Capacity
-        FROM AircraftTable
-        WHERE AircraftNo NOT IN (
-            SELECT AircraftNo FROM FlightTable
-        )";
+            string query = "SELECT TOP 1 AircraftNo, Capacity FROM AircraftTable WHERE AircraftNo NOT IN (SELECT AircraftNo FROM FlightTable)";
 
-            SqlDataAdapter da = new SqlDataAdapter(query, con);
+            SqlCommand cmd = new SqlCommand(query, con);  
+            SqlDataAdapter da = new SqlDataAdapter(cmd); 
+
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            da.Fill(dt);  
 
             con.Close();
             return dt;
         }
+
 
 
         public static void AddFlight(string departure, string destination,
@@ -101,19 +79,12 @@ namespace US_Bangla_Airline_Management_App
         }
 
       
-        public static void UpdateFlight(int id, string departure, string destination,
-            DateTime depTime, DateTime arrTime,
-            int totalSeats, int aircraftNo, int status)
+        public static void UpdateFlight(int id, string departure, string destination, DateTime depTime, DateTime arrTime,int totalSeats, int aircraftNo, int status)
         {
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
-            string query =
-                "UPDATE FlightTable SET " +
-                "Departure=@Departure, Destination=@Destination, " +
-                "DepartureDateTime=@Dep, ArrivalDateTime=@Arr, " +
-                "TotalSeats=@Seats, AircraftNo=@Aircraft, FlightStatus=@Status " +
-                "WHERE FlightID=@ID";
+            string query = "UPDATE FlightTable SET " + "Departure=@Departure, Destination=@Destination, DepartureDateTime=@Dep, ArrivalDateTime=@Arr, TotalSeats=@Seats, AircraftNo=@Aircraft, FlightStatus=@Status WHERE FlightID=@ID";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@ID", id);

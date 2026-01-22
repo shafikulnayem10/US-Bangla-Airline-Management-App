@@ -12,22 +12,13 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class SingleFlightForm : Form
     {
-        int flightId;
+       
 
-        public SingleFlightForm(
-            int id,
-            string departure,
-            string destination,
-            DateTime depTime,
-            DateTime arrTime,
-            int totalSeats,
-            int aircraftNo,
-            int status
-        )
+        public SingleFlightForm(   int id,  string departure,  string destination, DateTime depTime,  DateTime arrTime,  int totalSeats,  int aircraftNo,int status )
         {
             InitializeComponent();
 
-            flightId = id;
+           
 
             SingleFlightFormFlightIDTxtBox.Text = id.ToString();
             SingleFlightFormDepartureTxtBox.Text = departure;
@@ -37,13 +28,18 @@ namespace US_Bangla_Airline_Management_App
             SingleFlightFormTotalSeatsTxtBox.Text = totalSeats.ToString();
             SingleFlightFormAircraftNoTxtBox.Text = aircraftNo.ToString();
 
-            SingleFlightFormStatusCmbBox.SelectedIndex =
-                status == 1 ? 0 : 1;
+            if (status == 1)
+            {
+                SingleFlightFormStatusCmbBox.SelectedIndex = 0;
+            }
+            else
+            {
+                SingleFlightFormStatusCmbBox.SelectedIndex = 1;
+            }
 
-          
-            SingleFlightFormFlightIDTxtBox.ReadOnly = true;
-            SingleFlightFormAircraftNoTxtBox.ReadOnly = true;
-            SingleFlightFormTotalSeatsTxtBox.ReadOnly = true;
+
+
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -56,34 +52,36 @@ namespace US_Bangla_Airline_Management_App
         {
             try
             {
-                Flight.UpdateFlight(
-                    flightId,
-                    SingleFlightFormDepartureTxtBox.Text,
-                    SingleFlightFormDestinationTxtBox.Text,
-                    SingleFlightFormDepartureDateTime.Value,
-                    SingleFlightFormArrivalDateTime.Value,
-                    int.Parse(SingleFlightFormTotalSeatsTxtBox.Text),
-                    int.Parse(SingleFlightFormAircraftNoTxtBox.Text),
-                    SingleFlightFormStatusCmbBox.SelectedIndex == 0 ? 1 : 0
-                );
+                int flightId = Convert.ToInt32( SingleFlightFormFlightIDTxtBox.Text);
+                string departure = SingleFlightFormDepartureTxtBox.Text;
+                string destination = SingleFlightFormDestinationTxtBox.Text;
+                DateTime departureTime = SingleFlightFormDepartureDateTime.Value;
+                DateTime arrivalTime = SingleFlightFormArrivalDateTime.Value;
+                int totalSeats = Convert.ToInt32(SingleFlightFormTotalSeatsTxtBox.Text);
+                int aircraftNo = Convert.ToInt32(SingleFlightFormAircraftNoTxtBox.Text);
+                int flightStatus;
 
-                MessageBox.Show(
-                    "Flight updated successfully",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                if (SingleFlightFormStatusCmbBox.SelectedIndex == 0)
+                {
+                    flightStatus = 1;
+                }
+                else
+                {
+                    flightStatus = 0;
+                }
+
+
+
+                Flight.UpdateFlight( flightId,departure, destination, departureTime, arrivalTime,totalSeats,aircraftNo,flightStatus  );
+
+
+                MessageBox.Show("Flight updated successfully" );
 
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                MessageBox.Show(ex.Message  );
             }
         }
 

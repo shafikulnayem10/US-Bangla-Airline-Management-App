@@ -18,10 +18,9 @@ namespace US_Bangla_Airline_Management_App
         {
             InitializeComponent();
 
-            if (!this.DesignMode)
-            {
+            
                 LoadAllUsers();
-            }
+            
         }
 
 
@@ -35,11 +34,7 @@ namespace US_Bangla_Airline_Management_App
         {
 
 
-                if (AllUsersTable.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Please select a user");
-                    return;
-                }
+                
 
                
                 DataGridViewRow row = AllUsersTable.SelectedRows[0];
@@ -52,6 +47,8 @@ namespace US_Bangla_Airline_Management_App
 
                
                 SingleUser su = new SingleUser(id, username, role, status);
+                this.Hide();
+               
                 su.ShowDialog();
 
               
@@ -62,30 +59,36 @@ namespace US_Bangla_Airline_Management_App
 
         private void AllUsersFormDeleteUserBtn_Click(object sender, EventArgs e)
         {
-            if (AllUsersTable.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Please select a user");
-                return;
-            }
-
+            
             DataGridViewRow row = AllUsersTable.SelectedRows[0];
             int id = Convert.ToInt32(row.Cells["ID"].Value);
 
-            bool isDeletingSelf = LoggedInUser.ID == id;
+            bool isDeletingSelf = false;
+            if (LoggedInUser.ID == id)
+            {
+                isDeletingSelf = true;
+            }
+            else
+            {
+                isDeletingSelf= false;
+            }
 
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to delete this user?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo);
 
-            if (result != DialogResult.Yes)
-                return;
+            if (result == DialogResult.Yes)
+            {
+                
+                User.DeleteUser(id);
+                MessageBox.Show("User deleted successfully");
+            }
+            else
+            {
+               
+                return ;
+            }
 
-            User.DeleteUser(id);
-            MessageBox.Show("User deleted successfully");
 
-            
+
             if (isDeletingSelf)
             {
                 MessageBox.Show(
@@ -98,10 +101,7 @@ namespace US_Bangla_Airline_Management_App
                 LoggedInUser.Logout();
 
                
-                foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
-                {
-                    f.Close();
-                }
+              
 
             
                 new regis().Show();

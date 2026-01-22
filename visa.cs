@@ -151,6 +151,7 @@ namespace US_Bangla_Airline_Management_App
         private void Exitbtn_Click(object sender, EventArgs e)
         {
             this.Close();
+            new CustomerDashboard().Show();
         }
         
         private void visa_Load(object sender, EventArgs e)

@@ -34,6 +34,7 @@ namespace US_Bangla_Airline_Management_App
             checkCmd.Parameters.AddWithValue("@UserName", username);
 
             int count = (int)checkCmd.ExecuteScalar();
+            
             if (count > 0)
             {
                 con.Close();
@@ -42,8 +43,9 @@ namespace US_Bangla_Airline_Management_App
 
             
             string insertQuery =
-                "INSERT INTO UserTable (ID, UserName, Password, Role, Status) " +
-                "VALUES (@ID, @UserName, @Password, @Role, @Status)";
+                @"INSERT INTO UserTable
+                (ID, UserName, Password, Role, Status) 
+                VALUES (@ID, @UserName, @Password, @Role, @Status)";
 
             SqlCommand cmd = new SqlCommand(insertQuery, con);
             cmd.Parameters.AddWithValue("@ID", id);
@@ -74,10 +76,14 @@ namespace US_Bangla_Airline_Management_App
 
             con.Close();
 
-            if (dt.Rows.Count > 0)
-                return dt.Rows[0];   
+            if (dt.Rows.Count == 1)
+            {
+                return dt.Rows[0];
+            }
             else
+            {
                 return null;
+            }
         }
 
         public static DataRow GetUserById(int id)
@@ -102,73 +108,61 @@ namespace US_Bangla_Airline_Management_App
         }
 
 
-        public static bool ReadUser(string username, string password)
+
+
+
+        public static DataTable GetAllUsers()
         {
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
-            string query =
-                "SELECT COUNT(*) FROM UserTable " +
-                "WHERE UserName=@username AND Password=@password AND Status=1";
+            string query = "SELECT * FROM UserTable";
 
             SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
 
-            int count = (int)cmd.ExecuteScalar();
+            sda.Fill(dt);
+            
+
             con.Close();
-
-            if (count > 0)
-                return true;
-            else
-                return false;
+            return dt;
         }
 
-   
 
-public static DataTable GetAllUsers()
-    {
-        SqlConnection con = DbConfig.GetConnection();
-        con.Open();
-
-        string query = "SELECT ID, UserName, Role, Status FROM UserTable";
-
-        SqlDataAdapter sda = new SqlDataAdapter(query, con);
-        DataTable dt = new DataTable();
-        sda.Fill(dt);
-
-        con.Close();
-        return dt;
-    }
-       
-        public static bool IsUserNameTaken(string username, int currentUserId)
+        public static bool IsUserCredentialTaken(string username, int currentUserId)
         {
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
             string query =
-                "SELECT COUNT(*) FROM UserTable " +
-                "WHERE UserName=@UserName AND ID<>@ID";
+                "SELECT COUNT(*) FROM UserTable WHERE UserName = @UserName AND ID != @ID";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@UserName", username);
             cmd.Parameters.AddWithValue("@ID", currentUserId);
 
-            int count = (int)cmd.ExecuteScalar();
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
 
-            return count > 0;
+            if (count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+
 
         public static void UpdateUser(int id, string username, string password, string role, int status)
         {
             SqlConnection con = DbConfig.GetConnection();
             con.Open();
 
-            string query =
-                "UPDATE UserTable SET " +
-                "UserName=@UserName, Password=@Password, Role=@Role, Status=@Status " +
-                "WHERE ID=@ID";
+            string query =  @"UPDATE UserTable SET UserName=@UserName, Password=@Password, Role=@Role, Status=@Status  WHERE ID=@ID";
 
             SqlCommand cmd = new SqlCommand(query, con);
             cmd.Parameters.AddWithValue("@ID", id);

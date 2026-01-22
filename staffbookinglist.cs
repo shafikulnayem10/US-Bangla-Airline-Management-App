@@ -19,7 +19,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void staffbookinglist_Load(object sender, EventArgs e)
         {
-            // Hide Primary Key column for UI cleanliness
+           
             if (staffbookinglistGridView.Columns.Contains("staffBookingID"))
             {
                 staffbookinglistGridView.Columns["staffBookingID"].Visible = false;
@@ -92,21 +92,12 @@ namespace US_Bangla_Airline_Management_App
     DataGridViewCellEventArgs e
 )
         {
-            // intentionally left blank
+            
         }
 
         private void staffBookingListFormDeleteBtn_Click(object sender, EventArgs e)
         {
-            if (staffbookinglistGridView.SelectedRows.Count == 0)
-            {
-                MessageBox.Show(
-                    "Please select a booking first",
-                    "No Selection",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-                return;
-            }
+          
 
             DataGridViewRow row =
                 staffbookinglistGridView.SelectedRows[0];

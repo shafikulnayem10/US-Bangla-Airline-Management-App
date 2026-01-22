@@ -143,7 +143,7 @@
             // 
             this.textDepartureDateTime.Location = new System.Drawing.Point(30, 280);
             this.textDepartureDateTime.Name = "textDepartureDateTime";
-            this.textDepartureDateTime.Size = new System.Drawing.Size(100, 23);
+            this.textDepartureDateTime.Size = new System.Drawing.Size(120, 23);
             this.textDepartureDateTime.TabIndex = 6;
             this.textDepartureDateTime.Text = "Departure Time:";
             // 
@@ -182,6 +182,7 @@
             // 
             this.BookingFormUNTxtBox.Location = new System.Drawing.Point(200, 120);
             this.BookingFormUNTxtBox.Name = "BookingFormUNTxtBox";
+            this.BookingFormUNTxtBox.ReadOnly = true;
             this.BookingFormUNTxtBox.Size = new System.Drawing.Size(200, 22);
             this.BookingFormUNTxtBox.TabIndex = 11;
             // 
@@ -189,6 +190,7 @@
             // 
             this.BookingFormSeatNumberTxtBox.Location = new System.Drawing.Point(200, 160);
             this.BookingFormSeatNumberTxtBox.Name = "BookingFormSeatNumberTxtBox";
+            this.BookingFormSeatNumberTxtBox.ReadOnly = true;
             this.BookingFormSeatNumberTxtBox.Size = new System.Drawing.Size(200, 22);
             this.BookingFormSeatNumberTxtBox.TabIndex = 12;
             // 
@@ -196,6 +198,7 @@
             // 
             this.txtDeparture.Location = new System.Drawing.Point(200, 200);
             this.txtDeparture.Name = "txtDeparture";
+            this.txtDeparture.ReadOnly = true;
             this.txtDeparture.Size = new System.Drawing.Size(200, 22);
             this.txtDeparture.TabIndex = 13;
             // 
@@ -203,6 +206,7 @@
             // 
             this.textDestination.Location = new System.Drawing.Point(200, 240);
             this.textDestination.Name = "textDestination";
+            this.textDestination.ReadOnly = true;
             this.textDestination.Size = new System.Drawing.Size(200, 22);
             this.textDestination.TabIndex = 14;
             // 
@@ -210,6 +214,7 @@
             // 
             this.textDepartureDate.Location = new System.Drawing.Point(200, 280);
             this.textDepartureDate.Name = "textDepartureDate";
+            this.textDepartureDate.ReadOnly = true;
             this.textDepartureDate.Size = new System.Drawing.Size(200, 22);
             this.textDepartureDate.TabIndex = 15;
             // 
@@ -217,6 +222,7 @@
             // 
             this.textArrivalDate.Location = new System.Drawing.Point(200, 320);
             this.textArrivalDate.Name = "textArrivalDate";
+            this.textArrivalDate.ReadOnly = true;
             this.textArrivalDate.Size = new System.Drawing.Size(200, 22);
             this.textArrivalDate.TabIndex = 16;
             // 
@@ -224,6 +230,7 @@
             // 
             this.textFlightStatus.Location = new System.Drawing.Point(200, 360);
             this.textFlightStatus.Name = "textFlightStatus";
+            this.textFlightStatus.ReadOnly = true;
             this.textFlightStatus.Size = new System.Drawing.Size(200, 22);
             this.textFlightStatus.TabIndex = 17;
             // 
@@ -231,6 +238,7 @@
             // 
             this.textAircraftNo.Location = new System.Drawing.Point(200, 400);
             this.textAircraftNo.Name = "textAircraftNo";
+            this.textAircraftNo.ReadOnly = true;
             this.textAircraftNo.Size = new System.Drawing.Size(200, 22);
             this.textAircraftNo.TabIndex = 18;
             // 

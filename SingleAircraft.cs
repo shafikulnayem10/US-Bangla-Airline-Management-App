@@ -67,7 +67,7 @@ namespace US_Bangla_Airline_Management_App
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Aircraft updated successfully ✈️");
+                MessageBox.Show("Aircraft updated successfully ");
 
                 this.Hide();
                 AllAircrafts a = new AllAircrafts();

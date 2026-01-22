@@ -116,12 +116,15 @@ namespace US_Bangla_Airline_Management_App
 
         private void StaffDashboardFormProfileBtn_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ProfileNavigator.OpenProfile();
         }
 
         private void Exitbutton_Click(object sender, EventArgs e)
         {
             this.Close();
+            LoggedInUser.Logout();
+            new LogInForm().Show();
         }
 
         private void staffdashboard_Load(object sender, EventArgs e)

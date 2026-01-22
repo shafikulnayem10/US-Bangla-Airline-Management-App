@@ -12,7 +12,7 @@ namespace US_Bangla_Airline_Management_App
 {
     public partial class UserProfileForm : Form
     {
-        int adminId;
+        int UserId;
         string oldRole;
 
 
@@ -20,20 +20,19 @@ namespace US_Bangla_Airline_Management_App
         public UserProfileForm(int id)
         {
             InitializeComponent();
-            adminId = id;
-            LoadAdminProfile();
+            UserId = id;
+            LoadUserProfile();
         }
-        private void LoadAdminProfile()
+        private void LoadUserProfile()
         {
-            DataRow user = User.GetUserById(adminId);
+            DataRow user = User.GetUserById(UserId);
 
             AdminProfileIDTxtBox.Text = user["ID"].ToString();
             AdminProfileUserNameTxtBox.Text = user["UserName"].ToString();
             AdminProfilePasswordTxtBox.Text = user["Password"].ToString();
             AdminProfileRoleCmbBox.SelectedItem = user["Role"].ToString();
 
-            AdminProfileIDTxtBox.ReadOnly = true;
-            AdminProfileUserNameTxtBox.ReadOnly = true;
+           
 
             
             oldRole = user["Role"].ToString().Trim();
@@ -45,7 +44,7 @@ namespace US_Bangla_Airline_Management_App
             string newRole = AdminProfileRoleCmbBox.SelectedItem.ToString().Trim();
 
             User.UpdateUser(
-                adminId,
+                UserId,
                 AdminProfileUserNameTxtBox.Text,
                 AdminProfilePasswordTxtBox.Text,
                 newRole,
@@ -54,40 +53,31 @@ namespace US_Bangla_Airline_Management_App
 
             MessageBox.Show("Profile updated successfully");
 
-          
+            
             if (oldRole.ToLower() != newRole.ToLower())
             {
-                MessageBox.Show(
-                    "Role changed. Please login again.",
-                    "Session Expired",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
+                MessageBox.Show("Role changed. Please login again.");
 
-               
                 LoggedInUser.ID = 0;
                 LoggedInUser.UserName = null;
                 LoggedInUser.Role = null;
                 LoggedInUser.Status = 0;
 
-               
-                foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
-                {
-                    if (!(f is LogInForm))
-                        f.Close();
-                }
-
+                this.Close();
                 new LogInForm().Show();
+
+                return; 
             }
 
-            this.Close();
-        }
-
-        private void AdminProfileFormBackBtn_click(object sender, EventArgs e)
-        {
+           
             this.Hide();
 
-            string role = LoggedInUser.Role?.ToLower();
+            string role = "";
+
+            if (LoggedInUser.Role != null)
+            {
+                role = LoggedInUser.Role.Replace(" ", "").ToLower().Trim();
+            }
 
             if (role == "admin")
             {
@@ -97,8 +87,42 @@ namespace US_Bangla_Airline_Management_App
             {
                 new CustomerDashboard().Show();
             }
-            else if (role == "staff")
+            else if (role == "counterstaff" || role == "staff")
             {
+                new staffdashboard().Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid role. Please login again.");
+                LoggedInUser.Logout();
+                new LogInForm().Show();
+            }
+        }
+
+
+        private void AdminProfileFormBackBtn_click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            string role = "";
+
+            if (LoggedInUser.Role != null)
+            {
+                role = LoggedInUser.Role.Replace(" ", "").ToLower().Trim();
+            }
+
+
+            if (role == "admin")
+            {
+                new AdminDashboard().Show();
+            }
+            else if (role == "customer")
+            {
+                new CustomerDashboard().Show();
+            }
+            else if (role == "counterstaff" || role == "staff")
+            {
+                new staffdashboard().Show();
               
             }
             else

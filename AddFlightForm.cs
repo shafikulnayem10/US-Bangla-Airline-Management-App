@@ -15,7 +15,8 @@ namespace US_Bangla_Airline_Management_App
         public AddFlightForm()
         {
             InitializeComponent();
-            this.Load += new System.EventHandler(this.AddFlightForm_Load);
+            this.Load += AddFlightForm_Load;
+
 
         }
 
@@ -25,25 +26,20 @@ namespace US_Bangla_Airline_Management_App
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show(
-                    "No available aircraft found. Please add an aircraft first.",
-                    "No Aircraft",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                MessageBox.Show( "No available aircraft found. Please add an aircraft first.");
 
                 this.Close();
                 return;
             }
 
-            AddFlightsFormAircraftNoTxtBox.Text =
-                dt.Rows[0]["AircraftNo"].ToString();
+          
+            AddFlightsFormAircraftNoTxtBox.Text = dt.Rows[0]["AircraftNo"].ToString();
 
-            AddFlightFormTotalSeatsTxtBox.Text =
-                dt.Rows[0]["Capacity"].ToString();
+            AddFlightFormTotalSeatsTxtBox.Text =  dt.Rows[0]["Capacity"].ToString();
 
-            AddFlightsFormAircraftNoTxtBox.ReadOnly = true;
-            AddFlightFormTotalSeatsTxtBox.ReadOnly = true;
+          
+           
+           
         }
 
 
@@ -57,26 +53,38 @@ namespace US_Bangla_Airline_Management_App
         {
             try
             {
-                Flight.AddFlight(
-        AddFlightFormDepartureTxtBox.Text,
-        AddFlightFormDestinationTxtBox.Text,
-        AddFlightFormDepartureDateTime.Value,
-        AddFlightFormArrivalDateTime.Value,
-        int.Parse(AddFlightFormTotalSeatsTxtBox.Text),
-        int.Parse(AddFlightsFormAircraftNoTxtBox.Text), 
-        AddFlightFormFlightStatusCmbBox.SelectedIndex == 0 ? 1 : 0
-    );
+               
+                string departure = AddFlightFormDepartureTxtBox.Text;
+                string destination = AddFlightFormDestinationTxtBox.Text;
+                DateTime departureTime = AddFlightFormDepartureDateTime.Value;
+                DateTime arrivalTime = AddFlightFormArrivalDateTime.Value;
+                int totalSeats = Convert.ToInt32(AddFlightFormTotalSeatsTxtBox.Text);
+                int aircraftNo = Convert.ToInt32(AddFlightsFormAircraftNoTxtBox.Text);
+                int flightStatus;
 
+                if (AddFlightFormFlightStatusCmbBox.SelectedIndex == 0)
+                {
+                    flightStatus = 1;
+                }
+                else
+                {
+                    flightStatus = 0;
+                }
+
+
+
+                Flight.AddFlight(departure, destination, departureTime, arrivalTime, totalSeats, aircraftNo, flightStatus);
 
                 MessageBox.Show("Flight added successfully");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
+
+
 
         private void AddFlightFormBackBtn_Click(object sender, EventArgs e)
         {

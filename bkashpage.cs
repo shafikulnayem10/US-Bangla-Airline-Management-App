@@ -68,8 +68,8 @@ namespace US_Bangla_Airline_Management_App
         
         public static void UpdatePaymentAndBookingStatus()
         {
-            using (SqlConnection con = DbConfig.GetConnection())
-            {
+            SqlConnection con = DbConfig.GetConnection();
+            
                 con.Open();
 
                 string query = @"
@@ -87,7 +87,7 @@ namespace US_Bangla_Airline_Management_App
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@uid", LoggedInUser.ID);
                 cmd.ExecuteNonQuery();
-            }
+            
         }
 
         
@@ -117,6 +117,7 @@ namespace US_Bangla_Airline_Management_App
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+            this.Hide();
 
             new CustomerDashboard().Show();
         }

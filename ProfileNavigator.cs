@@ -18,7 +18,7 @@ namespace US_Bangla_Airline_Management_App
             }
             else
             {
-                new UserProfileForm(LoggedInUser.ID).ShowDialog();
+                new UserProfileForm(LoggedInUser.ID).Show();
             }
         }
 

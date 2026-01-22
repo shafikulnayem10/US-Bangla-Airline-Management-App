@@ -50,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.departuretimetextBox = new System.Windows.Forms.TextBox();
             this.confirmbutton = new System.Windows.Forms.Button();
-            this.Exitbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -251,19 +250,6 @@
             this.confirmbutton.UseVisualStyleBackColor = false;
             this.confirmbutton.Click += new System.EventHandler(this.confirmbutton_Click);
             // 
-            // Exitbutton
-            // 
-            this.Exitbutton.BackColor = System.Drawing.Color.Red;
-            this.Exitbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exitbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Exitbutton.Location = new System.Drawing.Point(12, 456);
-            this.Exitbutton.Name = "Exitbutton";
-            this.Exitbutton.Size = new System.Drawing.Size(70, 29);
-            this.Exitbutton.TabIndex = 42;
-            this.Exitbutton.Text = "Exit";
-            this.Exitbutton.UseVisualStyleBackColor = false;
-            this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
-            // 
             // staffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,7 +258,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(889, 507);
-            this.Controls.Add(this.Exitbutton);
             this.Controls.Add(this.confirmbutton);
             this.Controls.Add(this.departuretimetextBox);
             this.Controls.Add(this.label1);
@@ -326,6 +311,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox departuretimetextBox;
         private System.Windows.Forms.Button confirmbutton;
-        private System.Windows.Forms.Button Exitbutton;
     }
 }

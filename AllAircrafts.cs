@@ -114,7 +114,7 @@ namespace US_Bangla_Airline_Management_App
                         cmd.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Aircraft deleted successfully ✈️");
+                    MessageBox.Show("Aircraft deleted successfully ");
 
                     LoadAllAircrafts();
                 }

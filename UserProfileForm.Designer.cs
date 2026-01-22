@@ -68,6 +68,7 @@
             this.AdminProfileIDTxtBox.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminProfileIDTxtBox.Location = new System.Drawing.Point(160, 30);
             this.AdminProfileIDTxtBox.Name = "AdminProfileIDTxtBox";
+            this.AdminProfileIDTxtBox.ReadOnly = true;
             this.AdminProfileIDTxtBox.Size = new System.Drawing.Size(180, 22);
             this.AdminProfileIDTxtBox.TabIndex = 1;
             // 
@@ -87,6 +88,7 @@
             this.AdminProfileUserNameTxtBox.BackColor = System.Drawing.Color.AliceBlue;
             this.AdminProfileUserNameTxtBox.Location = new System.Drawing.Point(160, 75);
             this.AdminProfileUserNameTxtBox.Name = "AdminProfileUserNameTxtBox";
+            this.AdminProfileUserNameTxtBox.ReadOnly = true;
             this.AdminProfileUserNameTxtBox.Size = new System.Drawing.Size(180, 22);
             this.AdminProfileUserNameTxtBox.TabIndex = 3;
             // 

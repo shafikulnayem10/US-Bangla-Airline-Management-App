@@ -26,6 +26,7 @@
             this.AvailableFlightBtn = new System.Windows.Forms.Button();
             this.CustomerBookingHistoryGridView = new System.Windows.Forms.DataGridView();
             this.CustomerDashboardFormCancelBooking = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerBookingHistoryGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             this.CustomerBookingHistoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CustomerBookingHistoryGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.CustomerBookingHistoryGridView.ColumnHeadersHeight = 29;
-            this.CustomerBookingHistoryGridView.Location = new System.Drawing.Point(511, 130);
+            this.CustomerBookingHistoryGridView.Location = new System.Drawing.Point(499, 179);
             this.CustomerBookingHistoryGridView.MultiSelect = false;
             this.CustomerBookingHistoryGridView.Name = "CustomerBookingHistoryGridView";
             this.CustomerBookingHistoryGridView.ReadOnly = true;
@@ -107,7 +108,7 @@
             this.CustomerDashboardFormCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CustomerDashboardFormCancelBooking.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.CustomerDashboardFormCancelBooking.ForeColor = System.Drawing.Color.White;
-            this.CustomerDashboardFormCancelBooking.Location = new System.Drawing.Point(715, 412);
+            this.CustomerDashboardFormCancelBooking.Location = new System.Drawing.Point(706, 461);
             this.CustomerDashboardFormCancelBooking.Name = "CustomerDashboardFormCancelBooking";
             this.CustomerDashboardFormCancelBooking.Size = new System.Drawing.Size(175, 62);
             this.CustomerDashboardFormCancelBooking.TabIndex = 15;
@@ -115,12 +116,25 @@
             this.CustomerDashboardFormCancelBooking.UseVisualStyleBackColor = false;
             this.CustomerDashboardFormCancelBooking.Click += new System.EventHandler(this.CustomerDashboardFormCancelBooking_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(688, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 32);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "My Booking";
+            // 
             // CustomerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CustomerDashboardFormCancelBooking);
             this.Controls.Add(this.CustomerBookingHistoryGridView);
             this.Controls.Add(this.CustomerDashBoardTitleLabel);
@@ -137,5 +151,6 @@
         }
 
         private System.Windows.Forms.Button CustomerDashboardFormCancelBooking;
+        private System.Windows.Forms.Label label1;
     }
 }

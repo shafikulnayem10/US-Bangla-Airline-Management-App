@@ -46,7 +46,9 @@ namespace US_Bangla_Airline_Management_App
 
         private void exitbutton_Click(object sender, EventArgs e)
         {
+            
             this.Close();
+            new CustomerDashboard().Show();
         }
     }
 }

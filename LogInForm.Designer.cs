@@ -96,6 +96,7 @@
             this.LogInFormPassTxtBox.Size = new System.Drawing.Size(340, 32);
             this.LogInFormPassTxtBox.TabIndex = 5;
             this.LogInFormPassTxtBox.UseSystemPasswordChar = true;
+            this.LogInFormPassTxtBox.WordWrap = false;
             // 
             // LogInFormPassLabel
             // 

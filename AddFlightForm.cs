@@ -77,6 +77,9 @@ namespace US_Bangla_Airline_Management_App
 
                 MessageBox.Show("Flight added successfully");
                 this.Close();
+                AllFlights af = new AllFlights();
+                af.Show();
+
             }
             catch (Exception ex)
             {

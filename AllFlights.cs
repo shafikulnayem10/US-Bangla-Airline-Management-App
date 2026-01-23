@@ -26,6 +26,7 @@ namespace US_Bangla_Airline_Management_App
 
         private void AllFlightsFormAddFlightBtn_Click(object sender, EventArgs e)
         {
+            this.Close();
             AddFlightForm f = new AddFlightForm();
             f.ShowDialog();
             AllFlightsFormFlightDataTable.DataSource = Flight.GetAllFlights();
